@@ -1,12 +1,12 @@
 function isActive(name){
 	var path = window.location.pathname;
 	var page = path.split("/").pop();
-	if(page==name+".html"){
+	if(page==name){
 		return " active";
 	}
 	else
 	{
-		if(page =="" && name=="index.html")
+		if(page =="" && name=="index")
 		{
 			return " active";
 		}
