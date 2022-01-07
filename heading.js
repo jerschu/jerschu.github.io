@@ -29,7 +29,7 @@ function loadHeader() {
 		  </div>\n\
 		  <div id="navbar">\n\
 			<a class="'+isActive("index")+'" href="index">Home</a>\n\
-			<a class="'+isActive("find")+'" href="find">Find</a>\n\
+			<a class="'+isActive("directory")+'" href="Directory">Find</a>\n\
 			<div class="dropdown">\n\
 				<button class="dropbtn">\n\
 					Classes \n\
