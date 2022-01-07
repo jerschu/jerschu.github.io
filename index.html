@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Boilermaker Notes</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="style.css">
+
+<script type="text/javascript" src="heading.js"></script>
+	
+<script>
+
+	function reportWindowSize() {
+		var div1=document.getElementById("left");
+		var div2=document.getElementById("right");
+		var elementHeight=0;
+		div2.style.height="auto";
+		div1.style.height="auto";
+		if(div1.offsetHeight>div2.offsetHeight){
+				var computedStyle = getComputedStyle(div1);
+				elementHeight = div1.offsetHeight;  // height with padding
+				elementHeight -= parseFloat(computedStyle.paddingTop) + parseFloat(computedStyle.paddingBottom);
+
+				div2.style.height = elementHeight-20 + 'px';
+			 }else{
+				var computedStyle = getComputedStyle(div2);
+				elementHeight = div2.offsetHeight;  // height with padding
+				elementHeight -= parseFloat(computedStyle.paddingTop) + parseFloat(computedStyle.paddingBottom);
+
+				div1.style.height = elementHeight-20 + 'px';
+			 }
+	}
+	window.onresize = reportWindowSize;
+
+	function donate(){
+		window.location.href = 'donate.html';
+	}
+	function loadPage(){
+		loadHeader();
+		reportWindowSize();
+	}
+	
+</script>
+
+</head>
+<body onload="loadPage()">
+
+<header>
+
+</header>
+
+<div class="content">
+
+
+<div id="test" class="container">
+	<div class="containerhead">
+       <p class="textheader">What is Boiler Schubox</p>
+	</div>
+	<div class="containercontent">
+	   <p class="describe">This site was been created as a way to store and share notes so that they can be accessible and used by all Purdue students. 
+	   It is merely a way to help out fellow students.  It can be be a way for you to review for your finals. 
+	   You can use it as a way to study on the go or to verify that you aren't missing any important concepts.
+	   You can use it to check formulas or other concepts to see if you copied it down right.
+	   
+	   </p>
+	   <p class="describe">over time we are going to add new features and tools to this website to help you in other ways.  We will post all up updates on this main page</p>
+	   <p class="describe">All published notes are owned by their creators and are not meant for redistribution</p>
+	</div>
+</div>
+
+<div class="fullouter">
+	<div class="right-div">
+			<div class="containerhead">
+       <p class="textheader">Contact</p>
+	</div>
+  
+		<div id="right" class="containercontent describe">
+			Email: boilermakersnotes@gmail.com</br>
+			Use this eamial to reach out about concerns or errors in the notes
+		</div>
+	</div>
+	
+	<div class="left-div">
+			<div class="containerhead">
+       <p class="textheader">Current Features</p>
+	</div>
+		<div id="left" class="containercontent describe">
+			<ul class="describe" >
+			<li>Course pages which will display class note and studyguides</li>
+			<li>Customizable styles and formatting for easy readability</li>
+			<li>Find section so that you can search for current topics</li>
+
+			</ul>
+		</div>
+	</div>
+</div>
+
+</div>
+
+
+<footer>
+<div style="padding:16px; background-color: rgb(100,100,100);" >
+	<p class='footer' style="text-align:center">This project is not affiliated with Purdue University or any of its departments. The creators do not profit off of this project in any way.</p>
+	<p class='footer' style="text-align:center">All notes and materials posted are owned they their creators</p>
+	<p class='footer' style="text-align:center">&copy; Boilermaker Notes</p>
+
+</div>
+</footer>
+</body>
+</html>

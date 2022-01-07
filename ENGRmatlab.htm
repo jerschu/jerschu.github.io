@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<link rel="stylesheet" href="customize.css">
+
+</head>
+
+<body lang=EN-US style='word-wrap:break-word'>
+
+<div id="content" class=WordSection1>
+
+<h1><span style=''>Matlab</span></h1>
+
+<h2><span style=''>Order of operations</span></h2>
+
+<p class=Body ><span
+style=''>1.<span style=''>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style=''>Parentheses ()</span></p>
+
+<p class=Body ><span
+style=''>2.<span style=''>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style=''>Exponentiation ^</span></p>
+
+<p class=Body ><span
+style=''>3.<span style=''>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style=''>Negation - </span></p>
+
+<p class=Body ><span
+style=''>4.<span style=''>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style=''>Multiplication and
+division * /</span></p>
+
+<p class=Body ><span
+style=''>5.<span style=''>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style=''>Addition and
+subtraction + -</span></p>
+
+<h2><span style=''>Default Functions</span></h2>
+
+<p class=Body style=''><span
+style='font-family:Symbol'>·<span style=''>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style=''>cos, sin, tan- radias</span></p>
+
+<p class=Body style=''><span
+style='font-family:Symbol'>·<span style=''>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style=''>Cosd, sin d tand-
+degrees</span></p>
+
+<p class=Body style=''><span
+style='font-family:Symbol'>·<span style=''>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style=''>pi- 3.141592…</span></p>
+
+<p class=Body style=''><span
+style='font-family:Symbol'>·<span style=''>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style=''>Log()-ln</span></p>
+
+<p class=Body style=''><span
+style='font-family:Symbol'>·<span style=''>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style=''>LOG10()- log</span></p>
+
+<h2><span style=''>Var names</span></h2>
+
+<p class=Body style=''><span
+style='font-family:Symbol'>·<span style=''>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style=''>Use descriptive names</span></p>
+
+<p class=Body style=''><span
+style='font-family:Symbol'>·<span style=''>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style=''>Don’t use special
+characters (the than _)</span></p>
+
+<p class=Body style=''><span
+style='font-family:Symbol'>·<span style=''>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style=''>Don’t start with
+number</span></p>
+
+<p class=Body style=''><span
+style='font-family:Symbol'>·<span style=''>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style=''>Do not overwrite
+MATLAB building in function and key words </span></p>
+
+<p class=Body style='margin-left:0.5in;'><span
+style='font-family:"Courier New"'>o<span style=''>&nbsp;&nbsp;
+</span></span><span style=''>to avoid this put an
+underscore</span></p>
+
+<p class=Body style=''><span
+style='font-family:Symbol'>·<span style=''>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style=''>Case sensitive</span></p>
+
+<h2><span style=''>Arrays</span></h2>
+
+<p class=Body style=''><span
+style='font-family:Symbol'>·<span style=''>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style=''>collection of data
+shoes elements are arranged in rows and or columns (stored and manipulated</span></p>
+
+<p class=Body style=''><span
+style='font-family:Symbol'>·<span style=''>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style=''>scalar- one element
+array</span></p>
+
+<p class=Body style=''><span
+style='font-family:Symbol'>·<span style=''>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style=''>vector- one
+dimensional array (either 1 row or 1 column)</span></p>
+
+<p class=Body style=''><span
+style='font-family:Symbol'>·<span style=''>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style=''>matrix- two
+dimensional array (multiple rows and columns)</span></p>
+
+<p class=Body style=''><span
+style='font-family:Symbol'>·<span style=''>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style=''>Items in rows
+separated by spaces or commas</span></p>
+
+<p class=Body style=''><span
+style='font-family:Symbol'>·<span style=''>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style=''>Items in columns
+separated by semicolons or a new line</span></p>
+
+<p class=Body style=''><span
+style='font-family:Symbol'>·<span style=''>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style=''>Start:step:end</span></p>
+
+<p class=Body style=''><span
+style='font-family:Symbol'>·<span style=''>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style=''>linspace(start, end)
+or linspace(start, end, number of values)</span></p>
+
+<h2><span style=''>Selecting array elements</span></h2>
+<p class=Body style=''><span
+style='font-family:Symbol'>·<span style=''>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style=''>One element array(row,
+column)</span></p>
+
+<p class=Body style=''><span
+style='font-family:Symbol'>·<span style=''>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style=''>Grid selection
+array(startr:endr,startc:endc)</span></p>
+
+<p class=Body style=''><span
+style='font-family:Symbol'>·<span style=''>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style=''>Entire column array(:,col)</span></p>
+
+<p class=Body style=''><span
+style='font-family:Symbol'>·<span style=''>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style=''>Entire row
+array(row,:)</span></p>
+
+<p class=Body style=''><span
+style='font-family:Symbol'>·<span style=''>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style=''>End can be used as an
+array index</span></p>
+
+<h2><span style=''>Fprintf</span></h2>
+
+<p class=Default style='
+'><span
+style='font-size:11.0pt;font-family:Symbol'>·<span style=''>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:11.0pt'>Can display text (no new line)</span></p>
+
+<p class=Default style='
+'><span
+style='font-size:11.0pt;font-family:Symbol'>·<span style=''>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:11.0pt'>Fprintf(“Hello there”) —&gt; Hello
+there(no new line)</span></p>
+
+<p class=Default style='
+'><span
+style='font-family:Symbol'>·<span style=''>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:11.0pt'>\n new line</span></p>
+
+<p class=Default style='
+'><span
+style='font-family:Symbol'>·<span style=''>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:11.0pt'>Apostrophe ‘’</span></p>
+
+<p class=Default style='
+'><span
+style='font-family:Symbol'>·<span style=''>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:11.0pt'>%s- insert string into text</span></p>
+
+<p class=Default style='
+'><span
+style='font-family:Symbol'>·<span style=''>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:11.0pt'>%0.1f</span></p>
+
+<p class=Default style='
+margin-left:0.5in;'><span
+style=''>o<span style=''>&nbsp;&nbsp;
+</span></span><span style='font-size:11.0pt'>#- is the width</span></p>
+
+<p class=Default style='
+margin-left:0.5in;'><span
+style=''>o<span style=''>&nbsp;&nbsp;
+</span></span><span style='font-size:11.0pt'>.#- is the precision</span></p>
+
+<p class=Default style='
+margin-left:0.5in;'><span
+style=''>o<span style=''>&nbsp;&nbsp;
+</span></span><span style='font-size:11.0pt'>F- floating point</span></p>
+
+<h2><span lang=IT style=''>Concatenate</span></h2>
+
+<p class=Body style=''><span
+style='font-family:Symbol'>·<span style=''>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style=''>link things together
+in a series or chain</span></p>
+
+<p class=Default style='
+'><span
+style='font-family:Symbol'>·<span style=''>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:11.0pt'>To concatenate side by side arrays
+must have the same number of rows</span></p>
+
+<p class=Default style='
+margin-left:0.5in;'><span
+style=''>o<span style=''>&nbsp;&nbsp;
+</span></span><span style='font-size:11.0pt'>[A,B] or [A B]</span></p>
+
+<p class=Default style='
+margin-left:0.5in;'><span
+style=''>o<span style=''>&nbsp;&nbsp;
+</span></span><span style='font-size:11.0pt'>horzcat(A, B)</span></p>
+
+<p class=Default style='
+'><span
+style='font-family:Symbol'>·<span style=''>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:11.0pt'>To concatenate one ontop of
+another they must have the same number of columns</span></p>
+
+<p class=Default style='
+margin-left:0.5in;'><span
+style=''>o<span style=''>&nbsp;&nbsp;
+</span></span><span style='font-size:11.0pt'>[A;B]</span></p>
+
+<p class=Default style='
+margin-left:0.5in;'><span
+style=''>o<span style=''>&nbsp;&nbsp;
+</span></span><span style='font-size:11.0pt'>Vertcat(A,B)</span></p>
+
+<h2><span style=''>Array Manipulation</span></h2>
+
+<p class=Body style=''><span
+style='font-family:Symbol'>·<span style=''>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style=''>A+B adds each element
+of Array A to Array B</span></p>
+
+<p class=Body style=''><span
+style='font-family:Symbol'>·<span style=''>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style=''>a*B multiplies each
+element of array B by</span><span lang=IT style=''>
+scalar a</span></p>
+
+<p class=Body style=''><span
+style='font-family:Symbol'>·<span style=''>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style=''>A/b divides each
+element of A by the scalar b</span></p>
+
+<p class=Body style=''><span
+style='font-family:Symbol'>·<span style=''>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style=''>A.*B multiplies each
+element of Array A to Array B</span></p>
+
+<p class=Body style=''><span
+style='font-family:Symbol'>·<span style=''>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style=''>A./B divides each
+element of Array A to Array B</span></p>
+
+<p class=Body ><span
+style='font-family:Symbol'>·<span >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span >A.^B takes each
+element of Array A to Array B power</span></p>
+
+<p class=Body ><span
+style='font-family:Symbol'>·<span >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span >Division of a scalar
+by an array a./B</span></p>
+
+<p class=Body ><span
+style='font-family:Symbol'>·<span >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span >Exponential involving
+scalar a.^B or B.^a</span></p>
+
+<h2><span >Conditionals</span></h2>
+
+<p class=Default style='
+'><span
+style='font-family:Symbol'>·<span >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:11.0pt'>&lt; less than</span></p>
+
+<p class=Default style='
+'><span
+style='font-family:Symbol'>·<span >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:11.0pt'>&gt; greater than</span></p>
+
+<p class=Default style='
+'><span
+style='font-family:Symbol'>·<span >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style=''>&lt;= less than or equal to</span></p>
+
+<p class=Default style='
+'><span
+style='font-family:Symbol'>·<span >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style=''>&gt;= greater than or equal to</span></p>
+
+<p class=Default style='
+'><span
+style='font-family:Symbol'>·<span >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style=''>== equal to</span></p>
+
+<p class=Default style='
+'><span
+style='font-family:Symbol'>·<span >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style=''>~ not</span></p>
+
+<p class=Default style='
+'><span
+style='font-family:Symbol'>·<span >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span >~= not equal to</span></p>
+
+<p class=Default style='
+'><span
+style='font-family:Symbol'>·<span >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span >&amp; and</span></p>
+
+<p class=Default style='
+'><span
+style='font-family:Symbol'>·<span >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span >| or</span></p>
+
+<h2><span >Order of operations</span></h2>
+
+<p class=Body ><span ><img
+width=505 height=209 src="ENGRmatlab_files/image001.jpg"
+alt="Table&#10;&#10;Description automatically generated"></span></p>
+
+<p class=Body ><span
+style='font-family:Symbol'>·<span >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span >&amp; evaluated before
+|</span></p>
+
+<h2><span >Find Function</span></h2>
+
+<p class=Body ><span
+style='font-family:Symbol'>·<span >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span >determines the linear
+index location of all non zero elements in array</span></p>
+
+<h2><span >If statements</span></h2>
+
+<p class=Body ><span ><img
+width=208 height=173 src="ENGRmatlab_files/image002.gif"
+alt="If condition&#13;&#10;	Body&#13;&#10;End&#13;&#10; - Description: If condition…"></span><span
+>  </span><span ><img
+width=197 height=173 src="ENGRmatlab_files/image003.gif"
+alt="If condition&#13;&#10;	Body&#13;&#10;Else&#13;&#10;	Body&#13;&#10;End&#13;&#10; - Description: If condition…"></span><span
+>  </span><span ><img
+width=202 height=172 src="ENGRmatlab_files/image004.gif"
+alt="If condition&#13;&#10;	Body&#13;&#10;Elseif condition&#13;&#10;	Body&#13;&#10;Else&#13;&#10;	Body&#13;&#10;End&#13;&#10; - Description: If condition…"></span><span
+> </span></p>
+
+<h2><span lang=NL >loops</span></h2>
+
+<p class=Body ><span
+style='font-family:Symbol'>·<span >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span >Need to initialize
+variable first</span></p>
+
+<p class=Body ><span ><img
+width=213 height=161 src="ENGRmatlab_files/image005.gif"
+alt="While condition&#13;&#10;	Body&#13;&#10;end&#13;&#10; - Description: While condition…"></span><span
+>  </span><span ><img
+width=255 height=163 src="ENGRmatlab_files/image006.gif"
+alt="for i=f:s:t&#13;&#10;	body&#13;&#10;end&#13;&#10;f=first value&#13;&#10;s=increment&#13;&#10;t=the value that is last passed&#13;&#10; - Description: for i=f:s:t…"></span></p>
+
+<h2><span >Array Selection</span></h2>
+
+<p class=Body ><span
+style='font-family:Symbol'>·<span >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span >A(r,:)- gets row r in
+the matrix</span></p>
+
+<p class=Body ><span
+style='font-family:Symbol'>·<span >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span >A(:,c)- gets column c
+in the matrix</span></p>
+
+<p class=Body ><span
+style='font-family:Symbol'>·<span >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span >A(r,c)- gets item
+(r,c) in matrix</span></p>
+
+<p class=Body ><span
+style='font-family:Symbol'>·<span >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span >A(r<sub>1</sub>: r<sub>2</sub></span><span
+lang=ES-TRAD >,c</span><sub><span
+>1</span></sub><span lang=IT
+>: c</span><sub><span style='font-family:
+"Helvetica Neue"'>2</span></sub><span >)-
+gets selection between r1 and r2 and c1 and c2</span></p>
+
+<h2><span >Functions</span></h2>
+
+<p class=Body ><span ><img
+width=214 height=150 src="ENGRmatlab_files/image007.gif"
+alt="Function fun_name(inputs)&#13;&#10;%body of the function&#13;&#10;End&#13;&#10;&#13;&#10;Fun_name(invalue)&#13;&#10; - Description: Function fun_name(inputs)…"></span><span
+>  </span><span ><img
+width=226 height=153 src="ENGRmatlab_files/image008.gif"
+alt="Function out_name=fun_name(inputs)&#13;&#10;%body of the function&#13;&#10;End&#13;&#10;&#13;&#10;Value_out=fun_name(in_value)&#13;&#10; - Description: Function out_name=fun_name(inputs)…"></span><span
+>  </span><span ><img
+width=255 height=153 src="ENGRmatlab_files/image009.gif"
+alt="Function [out_1,out2]=fun_name(inputs)&#13;&#10;%body of the function&#13;&#10;End&#13;&#10;&#13;&#10;[out_1,out2]=fun_name(in_value)&#13;&#10; - Description: Function [out_1,out2]=fun_name(inputs)…"></span></p>
+
+<p class=Body ><span >&nbsp;</span></p>
+
+<p class=Body ><span ><img
+width=553 height=225 src="ENGRmatlab_files/image010.jpg"
+alt="Graphical user interface, text&#10;&#10;Description automatically generated with medium confidence"></span></p>
+
+<p class=Body ><span >&nbsp;</span></p>
+
+<p class=Body ><span ><img
+width=603 height=247 src="ENGRmatlab_files/image011.jpg"
+alt="Table&#10;&#10;Description automatically generated"></span></p>
+
+<p class=Body ><span >&nbsp;</span></p>
+
+<p class=Body ><span ><img
+width=605 height=167 src="ENGRmatlab_files/image012.jpg"
+alt="Graphical user interface, application&#10;&#10;Description automatically generated"></span></p>
+
+<p class=Body ><span
+style='font-family:Symbol'>·<span >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span >Change folder to the
+location of the file</span></p>
+
+<p class=Body ><span
+style='font-family:Symbol'>·<span >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span >Txt files</span></p>
+
+<p class=Body style='margin-left:0.5in;'><span
+>o<span >&nbsp;&nbsp;
+</span></span><span >Load(</span><span
+dir=RTL></span><span lang=AR-SA dir=RTL style='font-family:"Arial Unicode MS",sans-serif'><span
+dir=RTL></span>“</span><span lang=ES-TRAD >name.txt</span><span
+>”) or load(</span><span dir=RTL></span><span
+lang=AR-SA dir=RTL style='font-family:"Arial Unicode MS",sans-serif'><span
+dir=RTL></span>‘</span><span lang=ES-TRAD >name.txt</span><span
+dir=RTL></span><span lang=AR-SA dir=RTL style='font-family:"Arial Unicode MS",sans-serif'><span
+dir=RTL></span>’</span><span dir=LTR></span><span ><span
+dir=LTR></span>)</span></p>
+
+<p class=Body style='margin-left:0.5in;'><span
+>o<span >&nbsp;&nbsp;
+</span></span><span >Can only load numeric
+data</span></p>
+
+<p class=Body style='margin-left:0.5in;'><span
+>o<span >&nbsp;&nbsp;
+</span></span><span >% at the beginning of
+line to hide unwanted data from matlab</span></p>
+
+<p class=Body style='margin-left:0.5in;'><span
+>o<span >&nbsp;&nbsp;
+</span></span><span >% headers and any text</span></p>
+
+<p class=Body ><span
+style='font-family:Symbol'>·<span >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span >Csv files</span></p>
+
+<p class=Body style='margin-left:0.5in;'><span
+>o<span >&nbsp;&nbsp;
+</span></span><span >csvread(</span><span
+dir=RTL></span><span lang=AR-SA dir=RTL style='font-family:"Arial Unicode MS",sans-serif'><span
+dir=RTL></span>“</span><span lang=ES-TRAD >name.txt</span><span
+>”) or tableread(</span><span dir=RTL></span><span
+lang=AR-SA dir=RTL style='font-family:"Arial Unicode MS",sans-serif'><span
+dir=RTL></span>‘</span><span lang=ES-TRAD >name.txt</span><span
+dir=RTL></span><span lang=AR-SA dir=RTL style='font-family:"Arial Unicode MS",sans-serif'><span
+dir=RTL></span>’</span><span dir=LTR></span><span ><span
+dir=LTR></span>)</span></p>
+
+<p class=Body style='margin-left:0.5in;'><span
+>o<span >&nbsp;&nbsp;
+</span></span><span >Can specify row and
+data of the numeric data</span></p>
+
+<p class=Body style='margin-left:0.5in;'><span
+>o<span >&nbsp;&nbsp;
+</span></span><span >A1 is 0,0</span></p>
+
+<p class=Body style='margin-left:0.5in;'><span
+>o<span >&nbsp;&nbsp;
+</span></span><span >csvread(</span><span
+dir=RTL></span><span lang=AR-SA dir=RTL style='font-family:"Arial Unicode MS",sans-serif'><span
+dir=RTL></span>“</span><span lang=ES-TRAD >name.txt</span><span
+>”</span><span lang=PT style='font-family:
+"Helvetica Neue"'>,r,c) </span></p>
+
+<p class=Body style='margin-left:1.5in;'><span
+style='font-family:Wingdings'>§<span >&nbsp;
+</span></span><span >start row and colum at
+zero because matlab is stupid</span></p>
+
+<p class=Default ><span
+><img width=492 height=249
+src="ENGRmatlab_files/image013.jpg"
+alt="Text&#10;&#10;Description automatically generated"></span></p>
+
+<p class=Body ><span >linear
+indexing goes down a column then dominates down the next one etc.</span></p>
+
+<p class=Body ><span lang=DA >Plot(x,y,LineSpec)</span></p>
+
+<p class=Body ><span >&nbsp;</span></p>
+
+<p class=Body ><span ><img
+width=639 height=282 src="ENGRmatlab_files/image014.jpg"
+alt="Graphical user interface, application&#10;&#10;Description automatically generated"></span></p>
+
+<p class=Body ><span >&nbsp;</span></p>
+
+<p class=Body ><span ><img
+width=588 height=199 src="ENGRmatlab_files/image015.jpg"
+alt="A screenshot of a computer&#10;&#10;Description automatically generated with medium confidence"></span><span
+> </span></p>
+
+<p class=Body ><span ><img
+width=553 height=199 src="ENGRmatlab_files/image016.jpg"
+alt="Text&#10;&#10;Description automatically generated"></span></p>
+
+<p class=Body ><span >&nbsp;</span></p>
+
+<p class=Body ><span ><img
+width=535 height=202 src="ENGRmatlab_files/image017.jpg"
+alt="Diagram&#10;&#10;Description automatically generated with medium confidence"></span></p>
+
+<p class=Body ><span >&nbsp;</span></p>
+
+<p class=Body ><span ><img
+width=533 height=135 src="ENGRmatlab_files/image018.jpg"
+alt="Text&#10;&#10;Description automatically generated with low confidence"></span></p>
+  
+<p class=Body ><span >&nbsp;</span></p>
+
+<p class=Body ><span ><img
+width=578 height=311 src="ENGRmatlab_files/image019.gif" alt=Image></span></p>
+
+<p class=Body ><span ><img
+width=573 height=319 id="officeArt object" src="ENGRmatlab_files/image020.gif"
+alt=Image></span></p>
+
+</div>
+
+</body>
+
+</html>
+
