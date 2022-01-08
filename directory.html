@@ -8,6 +8,9 @@
 <link rel="stylesheet" href="style.css">
 
 <script type="text/javascript" src="heading.js"></script>
+  
+<script src="table.js"></script>
+<link rel="stylesheet" href="table.css" type="text/css">
 
 </head>
 <body onload="loadHeader()">
@@ -18,7 +21,62 @@
 
 
 <div class='content'>
-
+  <table class="sortable">
+    <thead>
+      <tr>
+        <th>
+          <button>
+            Department
+            <span aria-hidden="true"></span>
+          </button>
+        </th>
+        <th aria-sort="ascending">
+          <button>
+            Course Number
+            <span aria-hidden="true"></span>
+          </button>
+        </th>
+      <th class="no-sort">Viewable Online</th>
+        <th class="no-sort">Link</th>
+      <th class="no-sort">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>CS</td>
+        <td class="num">159</td>
+        <td class="center">☑</td>
+        <td><a href="/notes/" download="filename">test</a></td>
+      <td>Description</td>
+      </tr>
+      <tr>
+        <td>CS</td>
+        <td class="num">159</td>
+        <td class="center">☒</td>
+        <td><a href="Calc 3 Chapter 14.pdf" download="filename">test</a></td>
+      <td>Description</td>
+      </tr>
+      <tr>
+        <td>CS</td>
+        <td class="num">159</td>
+        <td class="center">☑</td>
+        <td><a href="Calc 3 Chapter 14.pdf" download="filename">test</a></td>
+      <td>Description</td>
+      </tr>
+      <tr>
+        <td>CS</td>
+        <td class="num">159</td>
+        <td class="center">☑</td>
+        <td><a href="Calc 3 Chapter 14.pdf" download="filename">test</a></td>
+      <td>Description</td>
+      </tr>
+    </tbody>
+    <caption style="caption-side: bottom;">
+    if the document is viewable online it will redirect you </br>
+    otherwise it will bring you to a document you can download</br> 
+    if the document is not viewable online this page is the only way to access the document
+    </caption>
+  </table>
 </div>
 
 
