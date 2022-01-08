@@ -23,8 +23,9 @@ table.sortable th:nth-child(5) {
   width: 10em;
 }
 
-.description {
-  width: 100%;
+table.sortable th.description {
+  padding: 0.125em 0.25em;
+  width: 20em;
 }
 
 table.sortable th button {
