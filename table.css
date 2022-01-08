@@ -23,6 +23,10 @@ table.sortable th:nth-child(5) {
   width: 10em;
 }
 
+.description {
+  width: 100%;
+}
+
 table.sortable th button {
   position: absolute;
   padding: 4px;
