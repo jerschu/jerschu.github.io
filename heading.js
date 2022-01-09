@@ -18,7 +18,7 @@ function isActive(name){
 }
 
 function loadHeader() {
-
+	var contentText=""
 	let names =[
 		["CS",159,["CS_159"]],
 		["MA",261,["MA_261_final"]],
@@ -41,6 +41,17 @@ function loadHeader() {
 		}
 		nav+='</div></div>'
 	
-		nav+='<iframe src="alert" title="new alert" height="50px" width="100%"></iframe></div>';	 
+		if(contentText != ""){
+			var alert="<html><head><style>";
+			alert+='.banner{background-color:red; display:flex;width:100%;}';
+			alert+='.content{display: inline-block; padding:10px; flex-grow: 1; color: white; font-family: "Helvetica Neue", Helvetica;}';
+			alert+='.btn{ display: inline-block background-color: red; border-style: solid; border-color: red; width: 50px; background:red !important; background-color:red !important; color:white !important;}';
+			alert+='</style></head><body>';
+			alert+='<div class="banner" id="alert">	<div class="content">'+contentText+'div>';
+			alert+='<button class="btn" onclick="closeWindow()"><span aria-hidden="true">&times;</span></button></div>';
+			alert+='<script>function closeWindow(){	var alt=document.getElementById("alert");alt.style.display = "none";}</script></body></html> 
+			nav+=alert;
+		}
+		nav+='</div>';	 
 	 document.getElementsByTagName("header")[0].innerHTML = nav; 
 } 
