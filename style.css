@@ -121,9 +121,8 @@ body {
 }
 @media screen and (max-width: 1000px) {
   .fullouter > div {
-    width: -webkit-calc(100% - 15px);
-    width:    -moz-calc(100% - 15px);
-    width:         calc(100% - 15px);
+    width: 100%;
+
 	margin-right: 0px;
 	margin-left: 0px;
   }
