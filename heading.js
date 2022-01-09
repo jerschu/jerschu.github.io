@@ -39,6 +39,8 @@ function loadHeader() {
 		for (var i=0;i<names.length;i++){
 			nav+='<a href=class?'+names[i][2].join("|")+'>'+names[i][0]+' '+names[i][1]+'</a></br>';
 		}
-		nav+='</div></div></div>';	 
+		nav+='</div></div>'
+	
+		nav+='<iframe src="alert" title="new alert" height="50px" width="100%"></iframe></div>';	 
 	 document.getElementsByTagName("header")[0].innerHTML = nav; 
 } 
