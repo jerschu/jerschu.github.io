@@ -49,7 +49,7 @@ function loadHeader() {
 			alert+='</style></head><body>';
 			alert+='<div class="banner" id="alert">	<div class="content">'+contentText+'div>';
 			alert+='<button class="btn" onclick="closeWindow()"><span aria-hidden="true">&times;</span></button></div>';
-			alert+='<script>function closeWindow(){	var alt=document.getElementById("alert");alt.style.display = "none";}</script></body></html> 
+			alert+='<script>function closeWindow(){	var alt=document.getElementById("alert");alt.style.display = "none";}</script></body></html>';
 			nav+=alert;
 		}
 		nav+='</div>';	 
