@@ -48,8 +48,8 @@ function loadHeader() {
 		if(contentText != ""){
 			var alert="<html><head><style>";
 			alert+='.banner{background-color:red; display:flex;width:100%;}';
-			alert+='.alerttxt{display: inline-block; padding:10px; flex-grow: 1; color: white; font-family: "Helvetica Neue", Helvetica;}';
-			alert+='.btn{ display: inline-block background-color: red; border-style: solid; border-color: red; width: 50px; background:red !important; background-color:red !important; color:white !important;}';
+			alert+='.alerttxt{display: inline-block; padding:10px, 10px; flex-grow: 1; color: white; font-family: "Helvetica Neue", Helvetica;}';
+			alert+='.btn{ display: inline-block background-color: red; border-style: align-items: center; solid; border-color: red; width: 50px; background:red !important; background-color:red !important; color:white !important;}';
 			alert+='</style></head><body>';
 			alert+='<div class="banner" id="alert">	<div class="alerttxt">'+contentText+'</div>';
 			alert+='<button class="btn" onclick="closeWindow()"><span aria-hidden="true">&times;</span></button></div>';
