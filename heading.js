@@ -44,10 +44,10 @@ function loadHeader() {
 		if(contentText != ""){
 			var alert="<html><head><style>";
 			alert+='.banner{background-color:red; display:flex;width:100%;}';
-			alert+='.content{display: inline-block; padding:10px; flex-grow: 1; color: white; font-family: "Helvetica Neue", Helvetica;}';
+			alert+='.alerttxt{display: inline-block; padding:10px; flex-grow: 1; color: white; font-family: "Helvetica Neue", Helvetica;}';
 			alert+='.btn{ display: inline-block background-color: red; border-style: solid; border-color: red; width: 50px; background:red !important; background-color:red !important; color:white !important;}';
 			alert+='</style></head><body>';
-			alert+='<div class="banner" id="alert">	<div class="content">'+contentText+'div>';
+			alert+='<div class="banner" id="alert">	<div class="alerttxt">'+contentText+'</div>';
 			alert+='<button class="btn" onclick="closeWindow()"><span aria-hidden="true">&times;</span></button></div>';
 			alert+='<script>function closeWindow(){	var alt=document.getElementById("alert");alt.style.display = "none";}</script></body></html>';
 			nav+=alert;
