@@ -18,7 +18,7 @@ function isActive(name){
 }
 
 function loadHeader() {
-	var contentText=""
+	var contentText="This is a test"
 	let names =[
 		["CS",159,["CS_159"]],
 		["MA",261,["MA_261_final"]],
