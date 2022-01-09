@@ -22,7 +22,7 @@ function closeWindow(){
 }
 
 function loadHeader() {
-	var contentText="This is a test"
+	var contentText=""; /*change to add alert*/
 	let names =[
 		["CS",159,["CS_159"]],
 		["MA",261,["MA_261_final"]],
