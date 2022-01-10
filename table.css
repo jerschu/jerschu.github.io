@@ -13,19 +13,22 @@ table.sortable th {
   font-weight: bold;
   border-bottom: thin solid #888;
   position: relative;
+  min-width: 100px;
 }
 
 table.sortable th.no-sort {
   padding-top: 0.35em;
+  width: 10%;
 }
 
 table.sortable th:nth-child(5) {
-  width: 10em;
+  width: 10%;
+  min-width: 200px;
 }
 
 table.sortable th.description {
   padding: 0.125em 0.25em;
-  width: 20em;
+  width: 60%;
 }
 
 table.sortable th button {
@@ -45,11 +48,13 @@ table.sortable th button {
   text-align: left;
   outline: none;
   cursor: pointer;
+
 }
 
 table.sortable th button span {
   position: absolute;
   right: 4px;
+
 }
 
 table.sortable th[aria-sort="descending"] span::after {
