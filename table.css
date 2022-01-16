@@ -13,7 +13,7 @@ table.sortable th {
   font-weight: bold;
   border-bottom: thin solid #888;
   position: relative;
-  min-width: 100px;
+  min-width: 140px;
 }
 
 table.sortable th.no-sort {
