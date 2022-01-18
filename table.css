@@ -21,8 +21,8 @@ table.sortable th.no-sort {
 }
 @media screen and (max-width: 650px) {
   body > div {
-    zoom: 0.6; 
-    -moz-transform: scale(0.6); 
+    zoom: 0.5; 
+    -moz-transform: scale(0.5); 
     -moz-transform-origin: 0 0;
 
   }
