@@ -6,31 +6,51 @@
 table.sortable td,
 table.sortable th {
   padding: 0.125em 0.25em;
-  width: 10em;
+
 }
 
 table.sortable th {
   font-weight: bold;
   border-bottom: thin solid #888;
   position: relative;
-  min-width: 140px;
+
 }
 
 table.sortable th.no-sort {
   padding-top: 0.35em;
-  width: 10%;
+}
+@media screen and (max-width: 650px) {
+  body > div {
+    zoom: 0.6; 
+    -moz-transform: scale(0.6); 
+    -moz-transform-origin: 0 0;
+
+  }
 }
 
-table.sortable th:nth-child(5) {
-  width: 10%;
-  min-width: 200px;
+
+
+table.sortable th:nth-child(1) {
+  width: 105px;
 }
+
+table.sortable th:nth-child(2) {
+  width: 135px;
+}
+
+table.sortable th:nth-child(3) {
+  width: 80px;
+}
+
+table.sortable th:nth-child(4) {
+  width: 80px;
+}
+
 
 table.sortable th.description {
   padding: 0.125em 0.25em;
-  width: 60%;
+  
 }
-
 table.sortable th button {
   position: absolute;
   padding: 4px;
