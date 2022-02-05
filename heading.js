@@ -23,7 +23,7 @@ function closeWindow(){
 
 function loadHeader() {
 	var contentText=""; /*change to add alert*/
-	let names =["CS 159","MA 261","ENGR 133"];
+	let names =["CS_159","MA_261","ENGR_133"];
 	 var nav='<div class="header">\n\
 				Boiler Schubox\n\
 		  </div>\n\
