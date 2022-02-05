@@ -23,11 +23,7 @@ function closeWindow(){
 
 function loadHeader() {
 	var contentText=""; /*change to add alert*/
-	let names =[
-		["CS",159,["CS_159"]],
-		["MA",261,["MA_261_final"]],
-		["ENGR",133,["ENGR_133","ENGRmatlab"]]
-		];
+	let names =["CS 159","MA 261","ENGR 133"];
 	 var nav='<div class="header">\n\
 				Boiler Schubox\n\
 		  </div>\n\
@@ -41,7 +37,7 @@ function loadHeader() {
 				</button>\n\
 				<div class="dropdown-content">'
 		for (var i=0;i<names.length;i++){
-			nav+='<a href=class?'+names[i][2].join("|")+'>'+names[i][0]+' '+names[i][1]+'</a></br>';
+			nav+='<a href=class?'+names[i]+'</a></br>';
 		}
 		nav+='</div></div>'
 	
