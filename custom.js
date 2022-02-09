@@ -33,7 +33,7 @@ function changeSize(item){
 	  var val=document.getElementById("size").value;
 	  document.querySelector('#size_out').value = val;
 
-	var tags=["h1","h2","h3","h4","h5","h6","p"]
+	var tags=["h1","h2","h3","h4","h5","h6","p","li"]
 	var counter=0
 	for(var j = 0; j < tags.length; j++){
 		var h1Elements = frm.document.getElementsByTagName(tags[j]);
