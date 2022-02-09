@@ -13,7 +13,7 @@
         if (url.startsWith("https://docs.google.com/document/d/")) {
             // create div and replace iframe
             let d = document.createElement('div');
-            d.classList.add("embedded-doc"); // optional
+            d.classList.add("embedded-doc"+i); // optional
             iframes[i].parentElement.replaceChild(d, iframes[i]);
 
             // CORS request
