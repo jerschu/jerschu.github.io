@@ -7,14 +7,15 @@
 </br>
 <iframe src="https://docs.google.com/document/d/e/2PACX-1vSTnVYaPrheQMUpPooQi1npDNMNXTMSyKyC38mP_aqXB-swW533Ca59Ds1cjrJ5pjQzZStntKZiHThs/pub?embedded=true" onload="initalizeFrame(this)"></iframe>
 <script>
-    function initalizeFrame(frame){
-        var url = frame.getAttribute("src");
+var iframes = document.getElementsByTagName("iframe");
+
+    for (let i = 0; i < iframes.length; i++) {
+        var url = iframes[i].getAttribute("src");
         if (url.startsWith("https://docs.google.com/document/d/")) {
             // create div and replace iframe
             let d = document.createElement('div');
             d.classList.add("embedded-doc"); // optional
-            d.style.width='100%';
-            frame.parentElement.replaceChild(d, frame);
+            iframes[i].parentElement.replaceChild(d, iframes[i]);
 
             // CORS request
             var xhr = new XMLHttpRequest();
