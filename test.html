@@ -12,6 +12,7 @@
             // create div and replace iframe
             let d = document.createElement('div');
             d.classList.add("embedded-doc"); // optional
+            d.style.width='100%';
             frame.parentElement.replaceChild(d, frame);
 
             // CORS request
