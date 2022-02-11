@@ -11,9 +11,8 @@
 <iframe src="https://docs.google.com/document/d/e/2PACX-1vRI9tkUlmgMBozxeL1dO4ApAZAsoZP4x716XCRSn6WsHPUsMTDzdidVDbMkd8FmyDx1XP2zu2e8RgBQ/pub?embedded=true" ></iframe>
  </div>
 <script>
-var iframes = document.getElementsByTagName("iframe");
-
     while(iframes.length>0){
+        var iframes = document.getElementsByTagName("iframe");
         var i=0;
         var url = iframes[i].getAttribute("src");
         if (url.startsWith("https://docs.google.com/document/d/")) {
