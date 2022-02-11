@@ -28,7 +28,9 @@
                 d.innerHTML = xhr.responseText;
             };
             xhr.send();
-            sleep(100);
+            setTimeout(function(){
+              //do what you need here
+            }, 2000);
         }
     }
 </script>
