@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html>
 <body>
+
 <div>  
-  <iframe src="https://docs.google.com/document/d/e/2PACX-1vRI9tkUlmgMBozxeL1dO4ApAZAsoZP4x716XCRSn6WsHPUsMTDzdidVDbMkd8FmyDx1XP2zu2e8RgBQ/pub?embedded=true" ></iframe>
-  <iframe src="https://docs.google.com/document/d/e/2PACX-1vRI9tkUlmgMBozxeL1dO4ApAZAsoZP4x716XCRSn6WsHPUsMTDzdidVDbMkd8FmyDx1XP2zu2e8RgBQ/pub?embedded=true" ></iframe>
-<iframe src="https://docs.google.com/document/d/e/2PACX-1vSTnVYaPrheQMUpPooQi1npDNMNXTMSyKyC38mP_aqXB-swW533Ca59Ds1cjrJ5pjQzZStntKZiHThs/pub?embedded=true"></iframe>
-  </div>
+<iframe src="https://docs.google.com/document/d/e/2PACX-1vSTnVYaPrheQMUpPooQi1npDNMNXTMSyKyC38mP_aqXB-swW533Ca59Ds1cjrJ5pjQzZStntKZiHThs/pub?embedded=true" onload="init(this,1)"></iframe>
+  
+  <iframe src="https://docs.google.com/document/d/e/2PACX-1vRI9tkUlmgMBozxeL1dO4ApAZAsoZP4x716XCRSn6WsHPUsMTDzdidVDbMkd8FmyDx1XP2zu2e8RgBQ/pub?embedded=true" onload="init(this,2)"></iframe>
+  
+  
+<iframe src="https://docs.google.com/document/d/e/2PACX-1vRI9tkUlmgMBozxeL1dO4ApAZAsoZP4x716XCRSn6WsHPUsMTDzdidVDbMkd8FmyDx1XP2zu2e8RgBQ/pub?embedded=true" onload="init(this,3)"></iframe>
+ </div>
+
 <script>
-    var iframes = document.getElementsByTagName("iframe");
-    while(iframes.length>0){
-        var iframes = document.getElementsByTagName("iframe");
-        var i=0;
-        var url = iframes[i].getAttribute("src");
+function init(fram,num){
+
+        var url = fram.getAttribute("src");
         if (url.startsWith("https://docs.google.com/document/d/")) {
             // create div and replace iframe
             var d = document.createElement('div');
-            d.classList.add("embedded-doc"); // optional
-            iframes[i].parentElement.replaceChild(d, iframes[i]);
+            d.classList.add("embedded-doc"+num); // optional
+            fram.parentElement.replaceChild(d, fram);
 
             // CORS request
             var xhr = new XMLHttpRequest();
@@ -27,7 +30,9 @@
             };
             xhr.send();
         }
-    }
+}
 </script>
+
+
 </body>
 </html>
