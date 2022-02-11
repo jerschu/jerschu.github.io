@@ -14,7 +14,21 @@ var iframes = document.getElementsByTagName("iframe");
 
     for (var i = 0; i < iframes.length; i++) {
         var url = iframes[i].getAttribute("src");
-        
+        if (url.startsWith("https://docs.google.com/document/d/")) {
+            // create div and replace iframe
+            var d = document.createElement('div');
+            d.classList.add("embedded-doc"); // optional
+            iframes[i].parentElement.replaceChild(d, iframes[i]);
+
+            // CORS request
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', url, true);
+            xhr.onload = function() {
+                // display response
+                d.innerHTML = xhr.responseText;
+            };
+            xhr.send();
+        }
     }
 </script>
 </body>
