@@ -4,9 +4,11 @@
 
 <h1>The iframe element</h1>
 <div>  
-  <iframe src="" ></iframe>
-  <iframe src="https://docs.google.com/document/d/e/2PACX-1vSTnVYaPrheQMUpPooQi1npDNMNXTMSyKyC38mP_aqXB-swW533Ca59Ds1cjrJ5pjQzZStntKZiHThs/pub?embedded=true"></iframe>
   <iframe src="https://docs.google.com/document/d/e/2PACX-1vRI9tkUlmgMBozxeL1dO4ApAZAsoZP4x716XCRSn6WsHPUsMTDzdidVDbMkd8FmyDx1XP2zu2e8RgBQ/pub?embedded=true" ></iframe>
+  <iframe src="https://docs.google.com/document/d/e/2PACX-1vRI9tkUlmgMBozxeL1dO4ApAZAsoZP4x716XCRSn6WsHPUsMTDzdidVDbMkd8FmyDx1XP2zu2e8RgBQ/pub?embedded=true" ></iframe>
+  
+  
+<iframe src="https://docs.google.com/document/d/e/2PACX-1vRI9tkUlmgMBozxeL1dO4ApAZAsoZP4x716XCRSn6WsHPUsMTDzdidVDbMkd8FmyDx1XP2zu2e8RgBQ/pub?embedded=true" ></iframe>
  </div>
 <script>
     var iframes = document.getElementsByTagName("iframe");
@@ -17,7 +19,7 @@
         if (url.startsWith("https://docs.google.com/document/d/")) {
             // create div and replace iframe
             var d = document.createElement('div');
-            d.classList.add("embedded-doc"+iframes.length); // optional
+            d.classList.add("embedded-doc"); // optional
             iframes[i].parentElement.replaceChild(d, iframes[i]);
 
             // CORS request
@@ -28,7 +30,6 @@
                 d.innerHTML = xhr.responseText;
             };
             xhr.send();
-
         }
     }
 </script>
