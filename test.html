@@ -13,7 +13,7 @@
 var iframes = document.getElementsByTagName("iframe");
 
     while(iframes.length>0)
-        let i=0;
+        var i=0;
         var url = iframes[i].getAttribute("src");
         if (url.startsWith("https://docs.google.com/document/d/")) {
             // create div and replace iframe
