@@ -18,7 +18,10 @@
 
 <script>
 function init(fram,num){
-
+  load(fram,num);
+  style(num);
+}
+function load(fram,num){
         var url = fram.getAttribute("src");
         if (url.startsWith("https://docs.google.com/document/d/")) {
             // create div and replace iframe
@@ -35,12 +38,12 @@ function init(fram,num){
             };
             xhr.send();
           
-            var style= d.getElementsByTagName("style");
-            var text=style[0].innerHTML;
+
             
         }
-
-      
+ function style(num)
+            var style= document.getElementsByID("embedded-doc"+num).getElementsByTagName("style");
+            var text=style[0].innerHTML;
 }
 </script>
 
