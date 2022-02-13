@@ -24,7 +24,7 @@ function load(fram,num){
         var url = fram.getAttribute("src");
         if (url.startsWith("https://docs.google.com/document/d/")) {
             // create div and replace iframe
-            var d = document.createElement('iframe');
+            var d = document.createElement('div');
             fram.parentElement.replaceChild(d, fram);
 
             // CORS request
