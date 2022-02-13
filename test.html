@@ -19,13 +19,12 @@
 <script>
 function init(fram,num){
   load(fram,num);
-  style(num);
 }
 function load(fram,num){
         var url = fram.getAttribute("src");
         if (url.startsWith("https://docs.google.com/document/d/")) {
             // create div and replace iframe
-            var d = document.createElement('div');
+            var d = document.createElement('iframe');
             d.classList.add("embedded-doc"+num); // optional
             fram.parentElement.replaceChild(d, fram);
 
@@ -42,10 +41,7 @@ function load(fram,num){
             
         }
 }
- function style(num){
-            var style= document.getElementById("embedded-doc"+num).getElementsByTagName("style");
-            var text=style[0].innerHTML;
-}
+
 </script>
 
 
