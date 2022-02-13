@@ -25,7 +25,6 @@ function load(fram,num){
         if (url.startsWith("https://docs.google.com/document/d/")) {
             // create div and replace iframe
             var d = document.createElement('iframe');
-            d.classList.add("embedded-doc"+num); // optional
             fram.parentElement.replaceChild(d, fram);
 
             // CORS request
@@ -33,7 +32,7 @@ function load(fram,num){
             xhr.open('GET', url, true);
             xhr.onload = function() {
                 // display response
-                d.innerHTML = xhr.responseText;
+                d.innerHTML = "<iframe srcdoc="+xhr.responseText+"></iframe>;
             };
             xhr.send();
           
