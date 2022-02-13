@@ -32,7 +32,7 @@ function load(fram,num){
             xhr.open('GET', url, true);
             xhr.onload = function() {
                 // display response
-                d.innerHTML = "<iframe srcdoc='"+xhr.responseText+"'></iframe>";
+                d.innerHTML = "<iframe width=100% height= 1000px srcdoc='"+xhr.responseText+"'></iframe>";
             };
             xhr.send();
           
