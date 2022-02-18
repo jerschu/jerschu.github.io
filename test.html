@@ -38,7 +38,7 @@ function init(fram,num){
 function load(d){
       var text=d.innerHTML;
       var fr = document.createElement('iframe');
-      fr.srcdoc="<html><head></head><body></body></html>"
+      fr.srcdoc="<html><head></head><body>"+text+"</body></html>"
       d.parentElement.replaceChild(fr, d);
 }
 
