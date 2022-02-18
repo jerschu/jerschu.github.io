@@ -44,7 +44,7 @@ function load(d){
       fr.style="width: 100%; height:1000px";
       fr.frameBorder="0";
       fr.scrolling="no";
-      fr.onload=initalizeStyle(this);
+      fr.onload=initalizeStyle(fr);
       fr.srcdoc="<html><head></head><body>"+text+"</body></html>"
       d.parentElement.replaceChild(fr, d);
 }
