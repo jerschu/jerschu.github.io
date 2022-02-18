@@ -18,9 +18,6 @@
 
 <script>
 function init(fram,num){
-  load(fram,num);
-}
-function load(fram,num){
         var url = fram.getAttribute("src");
         if (url.startsWith("https://docs.google.com/document/d/")) {
             // create div and replace iframe
@@ -33,12 +30,16 @@ function load(fram,num){
             xhr.onload = function() {
                 // display response
                 d.innerHTML = xhr.responseText;
+                d.onload=load(d);
             };
             xhr.send();
-          
-
-            
         }
+}
+function load(d){
+      var text=d.innerHTML;
+      var fr = document.createElement('iframe');
+      fr.srcdoc="<html><head></head><body></body></html>"
+      d.parentElement.replaceChild(fr, d);
 }
 
 </script>
