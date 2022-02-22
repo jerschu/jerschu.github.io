@@ -19,9 +19,15 @@ function resize(item)
 
 function changeFont(item){
 	  var frm=item.contentWindow
-	  frm.document.getElementById(id).classList.remove("Handwritting");
-	  frm.document.getElementById(id).classList.remove("Simple");
-	  frm.document.getElementById(id).classList.remove("Coding");
+	  if(frm.document.getElementById(id).classList.contains("Handwritting")){
+	  	frm.document.getElementById(id).classList.remove("Handwritting");
+	  }
+	  if(frm.document.getElementById(id).classList.contains("Simple")){
+	  	frm.document.getElementById(id).classList.remove("Simple");
+	  }
+	  if(frm.document.getElementById(id).classList.contains("Coding")){
+	  	frm.document.getElementById(id).classList.remove("Coding");
+	  }
 
 	  frm.document.getElementById(id).classList.add(document.getElementById("font").value);
 	  resize(item);
