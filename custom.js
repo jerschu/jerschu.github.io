@@ -18,18 +18,18 @@ function resize(item)
 }
 
 function changeFont(item){
-	  var frm=item.contentWindow
-	  if(frm.document.getElementById(id).classList.contains("Handwritting")){
+	  var frm = iframe.contentDocument || iframe.contentWindow.document;
+	  if(frm.getElementById(id).classList.contains("Handwritting")){
 	  	frm.document.getElementById(id).classList.remove("Handwritting");
 	  }
-	  if(frm.document.getElementById(id).classList.contains("Simple")){
+	  if(frm.getElementById(id).classList.contains("Simple")){
 	  	frm.document.getElementById(id).classList.remove("Simple");
 	  }
-	  if(frm.document.getElementById(id).classList.contains("Coding")){
+	  if(frm.getElementById(id).classList.contains("Coding")){
 	  	frm.document.getElementById(id).classList.remove("Coding");
 	  }
 
-	  frm.document.getElementById(id).classList.add(document.getElementById("font").value);
+	  frm.getElementById(id).classList.add(document.getElementById("font").value);
 	  resize(item);
 
 }
