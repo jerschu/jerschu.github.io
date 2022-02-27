@@ -18,7 +18,7 @@ function resize(item)
 }
 
 function changeFont(item){
-	  var frm = iframe.contentDocument || iframe.contentWindow.document;
+	  var frm = item.contentDocument || item.contentWindow.document;
 	  if(frm.getElementById(id).classList.contains("Handwritting")){
 	  	frm.document.getElementById(id).classList.remove("Handwritting");
 	  }
