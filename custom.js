@@ -6,7 +6,9 @@ function initalizeStyle(item){
 	changeSize(item);
 	changeSpacing(item);
 }
-
+function initalizedocStyle(item){
+	resize(item);
+}
 function resize(item)
 // function execute while load the iframe
 {
