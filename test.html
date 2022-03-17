@@ -43,13 +43,10 @@ function load(d){
       fr.style="width: 100%; height:1000px";
       fr.frameBorder="0";
       fr.scrolling="no";
-      fr.srcdoc="<html><head></head><body>"+text+"</body></html>";
+      fr.srcdoc="<html><head></head><body onload='initalizeStyle(fr)'>"+text+"</body></html>";
 
       d.parentElement.replaceChild(fr, d);
-      fr.onload=initalizeStyle(fr);
 
-      
-          alert("hi 2");
 }
 
 </script>
