@@ -47,6 +47,14 @@ function load(d){
 
       d.parentElement.replaceChild(fr, d);
       fr.onload=initalizeStyle(fr);
+
+      fr.contentWindow.document.addEventListener('readystatechange', event => { 
+        // When HTML/DOM elements are ready:
+    
+        if (event.target.readyState === "complete") {
+          alert("hi 2");
+        }
+      });
 }
 
 </script>
