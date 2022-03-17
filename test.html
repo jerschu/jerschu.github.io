@@ -48,13 +48,9 @@ function load(d){
 
       d.parentElement.replaceChild(fr, d);
       fr.onload=initalizedocStyle(fr);
-      fr.contentWindow.document.addEventListener('readystatechange', event => { 
-        // When HTML/DOM elements are ready:
-    
-       if (event.target.readyState === "interactive") {   //does same as:  ..addEventListener("DOMContentLoaded"..
-         alert("hi 1");
-       }
-      });
+      fr.contentWindow.document.addEventListener('DOMContentLoaded', function() {
+        alert("Load");
+      }, false);
 }
 
 </script>
