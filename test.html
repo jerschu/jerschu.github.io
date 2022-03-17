@@ -48,7 +48,7 @@ function load(d){
 
       d.parentElement.replaceChild(fr, d);
       fr.onload=initalizedocStyle(fr);
-      fr.contentWindow.document.addEventListener('DOMContentLoaded', function() {
+      fr.addEventListener('DOMContentLoaded', function() {
         alert("Load");
       }, false);
 }
