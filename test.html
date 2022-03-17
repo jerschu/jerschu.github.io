@@ -9,7 +9,7 @@
     <script type="text/javascript" src="custom.js"></script>
   </head>
 <body>
-<button onlick="resize()">Test<button>
+<button onlick="resize()">Test</button>
 <div id="content">  
 <iframe src="https://docs.google.com/document/d/e/2PACX-1vSTnVYaPrheQMUpPooQi1npDNMNXTMSyKyC38mP_aqXB-swW533Ca59Ds1cjrJ5pjQzZStntKZiHThs/pub?embedded=true" onload="init(this,1)"></iframe>
   
@@ -51,9 +51,9 @@ function load(d){
       fr.contentWindow.document.addEventListener('readystatechange', event => { 
         // When HTML/DOM elements are ready:
     
-        if (event.target.readyState === "complete") {
-          alert("hi 2");
-        }
+       if (event.target.readyState === "interactive") {   //does same as:  ..addEventListener("DOMContentLoaded"..
+         alert("hi 1");
+       }
       });
 }
 
