@@ -32,9 +32,23 @@ function init(fram,num){
             xhr.onload = function() {
                 // display response
                 d.innerHTML = xhr.responseText;
+                d.onload=load(d);
             };
             xhr.send();
         }
+}
+function load(d){
+      var text=d.innerHTML;
+      var fr = document.createElement('iframe');
+  
+      fr.style="width: 100%; height:1000px";
+      fr.frameBorder="0";
+      fr.scrolling="no";
+      fr.srcdoc="<html><head></head><body>"+text+"</body></html>";
+      
+
+      d.parentElement.replaceChild(fr, d);
+      initalizeStyle(fr);
 }
 
 </script>
