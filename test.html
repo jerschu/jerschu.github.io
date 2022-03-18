@@ -45,7 +45,7 @@ function load(d){
       fr.frameBorder="0";
       fr.scrolling="no";
       fr.srcdoc="<html><head></head><body>"+text+"</body></html>";
-      fr.onload=initalizeStyle(this);
+      fr.onload=initalizeStyle(fr);
 
       d.parentElement.replaceChild(fr, d);
 
