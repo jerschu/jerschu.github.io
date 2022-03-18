@@ -19,6 +19,12 @@
  </div>
 
 <script>
+  
+  function al(){
+    alert("test");
+  }
+  
+ 
 function init(fram,num){
         var url = fram.getAttribute("src");
         if (url.startsWith("https://docs.google.com/document/d/")) {
@@ -50,9 +56,7 @@ function load(d){
       d.parentElement.replaceChild(fr, d);
       initalizeStyle(fr);
 }
-  function al(){
-    alert("test");
-  }
+
 
 </script>
 
