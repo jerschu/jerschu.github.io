@@ -39,15 +39,7 @@ function init(fram,num){
 }
 function load(d){
       var text=d.innerHTML;
-      var fr = document.createElement('iframe');
-  
-      fr.style="width: 100%; height:1000px";
-      fr.frameBorder="0";
-      fr.scrolling="no";
-      fr.srcdoc="<html><head></head><body>"+text+"</body></html>";
-      fr.onload=initalizeStyle(fr);
-
-      d.parentElement.replaceChild(fr, d);
+      d.innerHTML=<iframe id="Iframe" srcdoc="<html><head></head><body>"+text+"</body></html>" style="width: 100%; height:1000px" frameBorder="0" scrolling=no onload="initalizeStyle(this)"></iframe>
 
 }
 
