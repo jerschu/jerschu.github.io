@@ -44,12 +44,15 @@ function load(d){
       fr.style="width: 100%; height:1000px";
       fr.frameBorder="0";
       fr.scrolling="no";
-      fr.srcdoc="<html><head></head><body>"+text+"</body></html>";
+      fr.srcdoc="<html><head></head><body onload='al()'>"+text+"</body></html>";
       
 
       d.parentElement.replaceChild(fr, d);
       initalizeStyle(fr);
 }
+  function al(){
+    alert("test");
+  }
 
 </script>
 
