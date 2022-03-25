@@ -41,7 +41,7 @@ function changeSize(item){
 	  var frm=item.contentWindow
 	  var val=document.getElementById("size").value;
 	  document.querySelector('#size_out').value = val;
-
+frm.getElementById(id).className = "";
 	var tags=["h1","h2","h3","h4","h5","h6","p","li"]
 	var counter=0
 	for(var j = 0; j < tags.length; j++){
@@ -62,7 +62,7 @@ function changeSpacing(item){
 	  var frm=item.contentWindow;
 	  var val=document.getElementById("space").value;
 	  document.querySelector('#space_out').value = val;
-
+frm.getElementById(id).className = "";
 	var tags=["p","h1","h2","h3","h4","h5","h6"]
 	for(var j = 0; j < tags.length; j++){
 		var h1Elements = frm.document.getElementsByTagName(tags[j]);
