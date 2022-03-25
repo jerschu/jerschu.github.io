@@ -21,7 +21,7 @@ function resize(item)
 
 function changeFont(item){
 	  var frm = item.contentDocument || item.contentWindow.document;
-	frm.getElementById(id).className = "";
+	frm.getElementById(id).classList = "";
 	  if(frm.getElementById(id).classList.contains("Handwritting")){
 	  	frm.document.getElementById(id).classList.remove("Handwritting");
 	  }
@@ -41,7 +41,7 @@ function changeSize(item){
 	  var frm=item.contentWindow
 	  var val=document.getElementById("size").value;
 	  document.querySelector('#size_out').value = val;
-frm.document.getElementById(id).className = "";
+
 	var tags=["h1","h2","h3","h4","h5","h6","p","li"]
 	var counter=0
 	for(var j = 0; j < tags.length; j++){
@@ -51,6 +51,7 @@ frm.document.getElementById(id).className = "";
 		}
 		for(var i = 0; i < h1Elements.length; i++) {
 		   h1Elements[i].style.fontSize =((Math.sqrt(10)-Math.sqrt(j-counter+2))*(val))+"px";
+		   h1Elements[i].style.fontSize = "";
 		}
 	}
 
@@ -62,12 +63,13 @@ function changeSpacing(item){
 	  var frm=item.contentWindow;
 	  var val=document.getElementById("space").value;
 	  document.querySelector('#space_out').value = val;
-frm.documnt.getElementById(id).className = "";
+
 	var tags=["p","h1","h2","h3","h4","h5","h6"]
 	for(var j = 0; j < tags.length; j++){
 		var h1Elements = frm.document.getElementsByTagName(tags[j]);
 		for(var i = 0; i < h1Elements.length; i++) {
 		   h1Elements[i].style.lineHeight =(val*100) + '%';
+			 h1Elements[i].style.fontSize = "";
 		}
 	}
 
