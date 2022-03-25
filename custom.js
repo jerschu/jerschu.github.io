@@ -21,6 +21,7 @@ function resize(item)
 
 function changeFont(item){
 	  var frm = item.contentDocument || item.contentWindow.document;
+	frm.getElementById(id).className = "";
 	  if(frm.getElementById(id).classList.contains("Handwritting")){
 	  	frm.document.getElementById(id).classList.remove("Handwritting");
 	  }
