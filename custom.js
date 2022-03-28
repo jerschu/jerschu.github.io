@@ -86,3 +86,6 @@ function changeSpacingForAll() {
     changeSpacing(elements[i]);
   }
 }
+function al(){
+  preplink(item)
+}
