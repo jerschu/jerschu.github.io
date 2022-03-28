@@ -86,6 +86,6 @@ function changeSpacingForAll() {
     changeSpacing(elements[i]);
   }
 }
-function al(){
+function al(item){
   preplink(item)
 }
