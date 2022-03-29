@@ -20,7 +20,7 @@ function preplink(item) {
   for (var i = 0; i < h1Elements.length; i++) {
     h1Elements[i].className = "";
   }
-  resize(item)
+  resize(item);
 }
 
 function resize(item)
