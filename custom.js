@@ -15,10 +15,12 @@ function initalizedocStyle(item) {
 
 function preplink(item) {
   var frm = item.contentWindow
+  frm.document.children[0].children[1].children[0].style="max-width:100%";
   var h1Elements = frm.document.getElementsByTagName("span");
   for (var i = 0; i < h1Elements.length; i++) {
     h1Elements[i].className = "";
   }
+  resize(item)
 }
 
 function resize(item)
@@ -46,10 +48,13 @@ function changeSize(item) {
     }
     for (var i = 0; i < h1Elements.length; i++) {
       h1Elements[i].style.fontSize = ((Math.sqrt(10) - Math.sqrt(j - counter + 2)) * (val)) + "px";
+		h1Elements[i].style.paddingTop="0";
+    h1Elements[i].style.paddingBottom="10px";
 
 
     }
   }
+  preplink(item);
 
 }
 
@@ -62,11 +67,11 @@ function changeSpacing(item) {
   for (var j = 0; j < tags.length; j++) {
     var h1Elements = frm.document.getElementsByTagName(tags[j]);
     for (var i = 0; i < h1Elements.length; i++) {
-      h1Elements[i].style.lineHeight = (val * 100) + '%';
+      h1Elements[i].style.lineHeight = (val*100) + '%';
 
     }
   }
-
+preplink(item);
   resize(item);
 }
 
@@ -85,7 +90,4 @@ function changeSpacingForAll() {
   for (var i = 0; i < elements.length; i++) {
     changeSpacing(elements[i]);
   }
-}
-function al(item){
-  preplink(item)
 }
