@@ -15,7 +15,7 @@ function initalizedocStyle(item) {
 
 function preplink(item) {
   var frm = item.contentWindow
-  frm.document.children[0].children[1].children[0].style="max-width:100%";
+
   var h1Elements = frm.document.getElementsByTagName("span");
   for (var i = 0; i < h1Elements.length; i++) {
     h1Elements[i].className = "";
