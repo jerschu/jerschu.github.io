@@ -137,8 +137,8 @@
           fr.style = "width: 100%; height:1000px";
           fr.frameBorder = "0";
           fr.scrolling = "no";
-          fr.srcdoc = "<html><head><script type='text/javascript' src='custom.js'><//script></head><body onload='initalizedocStyle(this)'>" + text + "</body></html>";
-
+          fr.srcdoc = "<html><head><script type='text/javascript' src='custom.js'><//script></head><body>" + text + "</body></html>";
+          fr.onload=initalizedocStyle(fr);
 
           d.parentElement.replaceChild(fr, d);
           initalizedocStyle(fr);
