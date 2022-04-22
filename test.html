@@ -36,7 +36,9 @@
           ["doc", "ENGRmatlab"]
         ]],
         ["ECON_251", [
-          ["link", "EconChapter1"]
+          ["link", "https://docs.google.com/document/d/e/2PACX-1vSTnVYaPrheQMUpPooQi1npDNMNXTMSyKyC38mP_aqXB-swW533Ca59Ds1cjrJ5pjQzZStntKZiHThs/pub?embedded=true"],
+	  ["link", "https://docs.google.com/document/d/e/2PACX-1vRI9tkUlmgMBozxeL1dO4ApAZAsoZP4x716XCRSn6WsHPUsMTDzdidVDbMkd8FmyDx1XP2zu2e8RgBQ/pub?embedded=true"],
+          ["link", "https://docs.google.com/document/d/e/2PACX-1vRI9tkUlmgMBozxeL1dO4ApAZAsoZP4x716XCRSn6WsHPUsMTDzdidVDbMkd8FmyDx1XP2zu2e8RgBQ/pub?embedded=true"]
         ]]
       ];
 
@@ -55,7 +57,7 @@
             note = '<div><iframe id="Iframe" src="' + coursedocs[i][1] + '.htm" style="width: 100%; height:1000px" frameBorder="0" scrolling=no onload="initalizedocStyle(this)"></iframe></div>';
           }
           if (coursedocs[i][0] == "link") {
-            note = '<div><iframe id="Iframe" src="' + coursedocs[i][1] + '.html" style="width: 100%; height:1000px" frameBorder="0" scrolling=no onload="initalizedocStyle(this)"></iframe></div>';
+            note = '<div><iframe id="Iframe" src="' + coursedocs[i][1]+'" style="width: 100%; height:1000px; visibility:hidden;" frameBorder="0" scrolling=no onload="init(this,'+i+')"></iframe></div>';
           }
           contentnotes.innerHTML += note;
         }
@@ -102,12 +104,12 @@
 
       </div>
       <div id="notes">
-        <iframe style="visibility:hidden;" src="https://docs.google.com/document/d/e/2PACX-1vSTnVYaPrheQMUpPooQi1npDNMNXTMSyKyC38mP_aqXB-swW533Ca59Ds1cjrJ5pjQzZStntKZiHThs/pub?embedded=true" onload="init(this,1)"></iframe>
+        <iframe style="visibility:hidden;" src="" onload="init(this,1)"></iframe>
 
-        <iframe style="visibility:hidden;" src="https://docs.google.com/document/d/e/2PACX-1vRI9tkUlmgMBozxeL1dO4ApAZAsoZP4x716XCRSn6WsHPUsMTDzdidVDbMkd8FmyDx1XP2zu2e8RgBQ/pub?embedded=true" onload="init(this,2)"></iframe>
+        <iframe style="visibility:hidden;" src="" onload="init(this,2)"></iframe>
 
 
-        <iframe style="visibility:hidden;" src="https://docs.google.com/document/d/e/2PACX-1vRI9tkUlmgMBozxeL1dO4ApAZAsoZP4x716XCRSn6WsHPUsMTDzdidVDbMkd8FmyDx1XP2zu2e8RgBQ/pub?embedded=true"  onload="init(this,3)"></iframe>
+        <iframe  src="https://docs.google.com/document/d/e/2PACX-1vRI9tkUlmgMBozxeL1dO4ApAZAsoZP4x716XCRSn6WsHPUsMTDzdidVDbMkd8FmyDx1XP2zu2e8RgBQ/pub?embedded=true"  onload=></iframe>
       </div>
 
       <script>
