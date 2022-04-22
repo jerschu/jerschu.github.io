@@ -41,7 +41,45 @@
           ["link", "https://docs.google.com/document/d/e/2PACX-1vRI9tkUlmgMBozxeL1dO4ApAZAsoZP4x716XCRSn6WsHPUsMTDzdidVDbMkd8FmyDx1XP2zu2e8RgBQ/pub?embedded=true"]
         ]]
       ];
+        function init(fram, num) {
+          var url = fram.getAttribute("src");
+          if (url.startsWith("https://docs.google.com/document/d/")) {
+            // create div and replace iframe
+            var d = document.createElement('div');
 
+            fram.parentElement.replaceChild(d, fram);
+						d.style.visibility='hidden';
+            // CORS request
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', url, true);
+            xhr.onload = function() {
+              // display response
+              d.innerHTML = xhr.responseText;
+              d.onload = load(d);
+            };
+            xhr.send();
+          }
+        }
+
+        function load(d) {
+
+          var text = d.innerHTML;
+          var fr = document.createElement('iframe');
+					
+          console.log(d.style.height)
+          
+          fr.frameBorder = "0";
+          fr.scrolling = "no";
+          fr.srcdoc = "<html><head><script type='text/javascript' src='custom.js'><//script></head><body>" + text + "</body></html>";
+
+					d.style="height:auto";
+          console.log();
+          var heightvar =parseInt(d.offsetHeight)+250
+          fr.style = "width: 100%; height: "+heightvar+"px";
+          d.parentElement.replaceChild(fr, d);
+         
+
+        }
       function loadNotes() {
         var coursedocs = []
         var data = location.search.substring(1);
@@ -103,57 +141,9 @@
 
 
       </div>
-      <div id="notes">
-        <iframe style="visibility:hidden;" src="" onload="init(this,1)"></iframe>
-
-        <iframe style="visibility:hidden;" src="" onload="init(this,2)"></iframe>
+      <div id="notes"></div>
 
 
-        <iframe  src="https://docs.google.com/document/d/e/2PACX-1vRI9tkUlmgMBozxeL1dO4ApAZAsoZP4x716XCRSn6WsHPUsMTDzdidVDbMkd8FmyDx1XP2zu2e8RgBQ/pub?embedded=true"  onload=></iframe>
-      </div>
-
-      <script>
-        function init(fram, num) {
-          var url = fram.getAttribute("src");
-          if (url.startsWith("https://docs.google.com/document/d/")) {
-            // create div and replace iframe
-            var d = document.createElement('div');
-
-            fram.parentElement.replaceChild(d, fram);
-						d.style.visibility='hidden';
-            // CORS request
-            var xhr = new XMLHttpRequest();
-            xhr.open('GET', url, true);
-            xhr.onload = function() {
-              // display response
-              d.innerHTML = xhr.responseText;
-              d.onload = load(d);
-            };
-            xhr.send();
-          }
-        }
-
-        function load(d) {
-
-          var text = d.innerHTML;
-          var fr = document.createElement('iframe');
-					
-          console.log(d.style.height)
-          
-          fr.frameBorder = "0";
-          fr.scrolling = "no";
-          fr.srcdoc = "<html><head><script type='text/javascript' src='custom.js'><//script></head><body>" + text + "</body></html>";
-
-					d.style="height:auto";
-          console.log();
-          var heightvar =parseInt(d.offsetHeight)+250
-          fr.style = "width: 100%; height: "+heightvar+"px";
-          d.parentElement.replaceChild(fr, d);
-         
-
-        }
-
-      </script>
 
     </div>
 
