@@ -72,14 +72,14 @@
           
           fr.frameBorder = "0";
           fr.scrolling = "no";
-          fr.srcdoc = "<html><head><script type='text/javascript' src='custom.js'><//script></head><body>" + text + "</body></html>";
+          fr.srcdoc = "<html><head><script type='text/javascript' src='custom.js'><//script></head><body onload'initalizedocStyle(this)'>" + text + "</body></html>";
 
 					d.style="height:auto";
           console.log();
           var heightvar =parseInt(d.offsetHeight)+250
           fr.style = "width: 100%; height: "+heightvar+"px";
           d.parentElement.replaceChild(fr, d);
-	  initalizedocStyle(fr)
+	  
          
 
         }
