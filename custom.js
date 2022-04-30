@@ -54,7 +54,7 @@ function changeSize(item) {
 
     }
   }
-  preplink(item);
+  resize(item);
 
 }
 
@@ -71,7 +71,6 @@ function changeSpacing(item) {
 
     }
   }
-preplink(item);
   resize(item);
 }
 
