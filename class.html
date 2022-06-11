@@ -76,8 +76,8 @@
           fr.frameBorder = "0";
           fr.scrolling = "no";
 	
-	  mathjax="<style>mjx-math{color:"+col+"}</style>"
-          fr.srcdoc = "<html><head><script type='text/javascript' src='custom.js'><\/script><link rel='stylesheet' href='h2.css'>"++"</head><body onload='initalizedocStyle(this)'><script src='https://polyfill.io/v3/polyfill.min.js?features=es6'><\/script><script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js'><\/script>" + text + "</body></html>";
+	  mathjax="<style>mjx-math{color:"+col+"}</style>";
+          fr.srcdoc = "<html><head><script type='text/javascript' src='custom.js'><\/script><link rel='stylesheet' href='h2.css'>"+mathjax+"</head><body onload='initalizedocStyle(this)'><script src='https://polyfill.io/v3/polyfill.min.js?features=es6'><\/script><script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js'><\/script>" + text + "</body></html>";
 
 					d.style="height:auto";
           console.log();
