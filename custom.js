@@ -59,7 +59,7 @@ function changeSize(item) {
 }
 
 function changeSpacing(item) {
-  var frm = item.contentWindow;
+  var frm = item;
   var val = document.getElementById("space").value;
   document.querySelector('#space_out').value = val;
 
