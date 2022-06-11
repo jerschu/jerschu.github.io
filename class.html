@@ -36,17 +36,17 @@
           ["doc", "ENGRmatlab"]
         ]],
         ["ECON_251", [
-          ["link", "https://docs.google.com/document/d/e/2PACX-1vR4gmHvazyP5XD6qz2-oodZyDwUxZP5CM_ESo0jbFGrsVtBP6RyadM7H98NHIQ7jw/pub?embedded=true"],
-	  ["link", "https://docs.google.com/document/d/e/2PACX-1vTFxVIgVrCXEwkd0Jx9yG8T_lATHszpvzg7T26yHIpnEo20jruLUYHKvhF0cn01-A/pub?embedded=true"]
+          ["link", "https://docs.google.com/document/d/e/2PACX-1vR4gmHvazyP5XD6qz2-oodZyDwUxZP5CM_ESo0jbFGrsVtBP6RyadM7H98NHIQ7jw/pub?embedded=true",white],
+	  ["link", "https://docs.google.com/document/d/e/2PACX-1vTFxVIgVrCXEwkd0Jx9yG8T_lATHszpvzg7T26yHIpnEo20jruLUYHKvhF0cn01-A/pub?embedded=true",white]
         ]],
 	 ["ME_200", [
-          ["link", "https://docs.google.com/document/d/e/2PACX-1vTv01xUTOkp0ocox5DRL_koS-nZl3fABj8tWCknFaEFk6qIo1aCXLpnay7-cTrdiw/pub?embedded=true"]
+          ["link", "https://docs.google.com/document/d/e/2PACX-1vTv01xUTOkp0ocox5DRL_koS-nZl3fABj8tWCknFaEFk6qIo1aCXLpnay7-cTrdiw/pub?embedded=true",white]
 	]],
          ["MA_265",[
-	  ["link", "https://docs.google.com/document/d/e/2PACX-1vR7h0I70mx0VeRSfHWPjbEe59i89prY4NqSigKKhujhmgPEm6FPgoyAXaWbwN5XCnUu8m1vahmJ-Qwb/pub?embedded=true"]
+	  ["link", "https://docs.google.com/document/d/e/2PACX-1vR7h0I70mx0VeRSfHWPjbEe59i89prY4NqSigKKhujhmgPEm6FPgoyAXaWbwN5XCnUu8m1vahmJ-Qwb/pub?embedded=true",white]
         ]]
       ];
-        function init(fram, num) {
+        function init(fram, num, col) {
           var url = fram.getAttribute("src");
           if (url.startsWith("https://docs.google.com/document/d/")) {
             // create div and replace iframe
@@ -60,13 +60,13 @@
             xhr.onload = function() {
               // display response
               d.innerHTML = xhr.responseText;
-              d.onload = load(d);
+              d.onload = load(d,col);
             };
             xhr.send();
           }
         }
 
-        function load(d) {
+        function load(d,col) {
 
           var text = d.innerHTML;
           var fr = document.createElement('iframe');
@@ -75,7 +75,9 @@
           
           fr.frameBorder = "0";
           fr.scrolling = "no";
-          fr.srcdoc = "<html><head><script type='text/javascript' src='custom.js'><\/script><link rel='stylesheet' href='h2.css'></head><body onload='initalizedocStyle(this)'><script src='https://polyfill.io/v3/polyfill.min.js?features=es6'><\/script><script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js'><\/script>" + text + "</body></html>";
+	
+	  mathjax="<style>mjx-math{color:"+col+"}</style>"
+          fr.srcdoc = "<html><head><script type='text/javascript' src='custom.js'><\/script><link rel='stylesheet' href='h2.css'>"++"</head><body onload='initalizedocStyle(this)'><script src='https://polyfill.io/v3/polyfill.min.js?features=es6'><\/script><script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js'><\/script>" + text + "</body></html>";
 
 					d.style="height:auto";
           console.log();
@@ -101,7 +103,7 @@
             note = '<div><iframe id="Iframe" src="' + coursedocs[i][1] + '.htm" style="width: 100%; height:1000px" frameBorder="0" scrolling=no onload="initalizeStyle(this)"></iframe></div>';
           }
           if (coursedocs[i][0] == "link") {
-            note = '<div><iframe id="Iframe" src="' + coursedocs[i][1]+'" style="width: 100%; height:1000px; visibility:hidden;" frameBorder="0" scrolling=no onload="init(this,'+i+')"></iframe></div>';
+            note = '<div><iframe id="Iframe" src="' + coursedocs[i][1]+'" style="width: 100%; height:1000px; visibility:hidden;" frameBorder="0" scrolling=no onload="init(this,'+i+','+coursedocs[i][2]+')"></iframe></div>';
           }
           contentnotes.innerHTML += note;
         }
