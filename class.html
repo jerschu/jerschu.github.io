@@ -103,7 +103,7 @@
             note = '<div><iframe id="Iframe" src="' + coursedocs[i][1] + '.htm" style="width: 100%; height:1000px" frameBorder="0" scrolling=no onload="initalizeStyle(this)"></iframe></div>';
           }
           if (coursedocs[i][0] == "link") {
-	    var col=coursedocs[i][2];
+	    var col="'"+coursedocs[i][2]+"'";
             note = '<div><iframe id="Iframe" src="' + coursedocs[i][1]+'" style="width: 100%; height:1000px; visibility:hidden;" frameBorder="0" scrolling=no onload="init(this,'+i+','+col+')"></iframe></div>';
           }
           contentnotes.innerHTML += note;
