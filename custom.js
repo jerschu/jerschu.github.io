@@ -39,7 +39,7 @@ function changeSize(item, size) {
   var frm = item.contentWindow;
   var val = size;
 
-  var tags = ["h1", "h2", "h3", "h4", "h5", "h6", "p", "li"]
+  var tags = ["h1", "h3", "h4", "h5", "h6", "p", "h2","li"]
   var counter = 0
   for (var j = 0; j < tags.length; j++) {
 
@@ -49,6 +49,9 @@ function changeSize(item, size) {
     }
     for (var i = 0; i < h1Elements.length; i++) {
       h1Elements[i].style.fontSize = ((Math.sqrt(10) - Math.sqrt(j - counter + 2)) * (val)) + "px";
+      if (j>=5){
+	      counter++;
+      }
 		h1Elements[i].style.paddingTop="0";
     h1Elements[i].style.paddingBottom="5px";
 
@@ -79,7 +82,7 @@ function changeSizeForAll() {
 
   var elements = document.getElementsByTagName("iframe");
   var size = document.getElementById("size").value;
-  documennt.querySelector('#size_out').value = size;
+  document.querySelector('#size_out').value = size;
   for (var i = 0; i < elements.length; i++) {
 
     changeSize(elements[i],size);
