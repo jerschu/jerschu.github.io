@@ -1,20 +1,23 @@
 var id = "content";
 
 function initalizeStyle(item) {
+
   changeSize(item);
   changeSpacing(item);
   resize(item);
 }
 
 function initalizedocStyle(item) {
-  preplink(item);
-  changeSize(item);
-  changeSpacing(item);
-  resize(item);
+  var y = (item.contentWindow || item.contentDocument);
+  var fram=y.parent.frameElement;
+  preplink(fram);
+  changeSize(fram);
+  changeSpacing(fram);
+  resize(fram);
 }
 
 function preplink(item) {
-  var frm = item;
+  var frm = (item.contentWindow || item.contentDocument);
   frm.document.firstChild.children[1].children[5].style="max-width:95%; margin:2.5%;"
   var h1Elements = frm.document.getElementsByTagName("span");
   for (var i = 0; i < h1Elements.length; i++) {
@@ -26,7 +29,7 @@ function preplink(item) {
 function resize(item)
 // function execute while load the iframe
 {
-  var frame = item.parentElement.parentElement;
+  var frame = item;
   // set the height of the iframe as 
   // the height of the iframe content
   frame.style.height =
