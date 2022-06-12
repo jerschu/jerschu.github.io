@@ -8,8 +8,7 @@ function initalizeStyle(item) {
 }
 
 function initalizedocStyle(item) {
-  var y = (item.contentWindow || item.contentDocument);
-  var fram=y.parent.frameElement;
+  var fram=item.frameElement;
   preplink(fram);
   changeSize(fram);
   changeSpacing(fram);
