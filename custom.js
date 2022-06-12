@@ -14,7 +14,7 @@ function initalizedocStyle(item) {
 }
 
 function preplink(item) {
-  var frm = item.contentWindow
+  var frm = item;
   frm.document.firstChild.children[1].children[5].style="max-width:95%; margin:2.5%;"
   var h1Elements = frm.document.getElementsByTagName("span");
   for (var i = 0; i < h1Elements.length; i++) {
@@ -34,7 +34,7 @@ function resize(item)
 }
 
 function changeSize(item) {
-  var frm = item.contentWindow
+  var frm = item;
   var val = document.getElementById("size").value;
   document.querySelector('#size_out').value = val;
 
