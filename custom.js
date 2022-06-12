@@ -34,7 +34,7 @@ function resize(item)
 }
 
 function changeSize(item) {
-  var frm = item;
+  var frm = item.contentWindow;
   var val = document.getElementById("size").value;
   document.querySelector('#size_out').value = val;
 
@@ -59,7 +59,7 @@ function changeSize(item) {
 }
 
 function changeSpacing(item) {
-  var frm = item;
+  var frm = item.contentWindow;
   var val = document.getElementById("space").value;
   document.querySelector('#space_out').value = val;
 
