@@ -1,17 +1,17 @@
 var id = "content";
 
-function initalizeStyle(item) {
+function initalizeStyle(item,doc) {
 
-  changeSize(item);
-  changeSpacing(item);
+  changeSize(item,doc);
+  changeSpacing(item,doc);
   resize(item);
 }
 
-function initalizedocStyle(item) {
+function initalizedocStyle(item,doc) {
   var fram=item.frameElement;
   preplink(fram);
-  changeSize(fram);
-  changeSpacing(fram);
+  changeSize(fram,doc);
+  changeSpacing(fram,doc);
   resize(fram);
 }
 
@@ -35,10 +35,10 @@ function resize(item)
     (frame.contentWindow.document.body.scrollHeight + 50) + 'px';
 }
 
-function changeSize(item) {
+function changeSize(item, doc) {
   var frm = item.contentWindow;
-  var val = document.getElementById("size").value;
-  document.querySelector('#size_out').value = val;
+  var val = doc.getElementById("size").value;
+  doc.querySelector('#size_out').value = val;
 
   var tags = ["h1", "h2", "h3", "h4", "h5", "h6", "p", "li"]
   var counter = 0
@@ -60,10 +60,10 @@ function changeSize(item) {
 
 }
 
-function changeSpacing(item) {
+function changeSpacing(item,doc) {
   var frm = item.contentWindow;
-  var val = document.getElementById("space").value;
-  document.querySelector('#space_out').value = val;
+  var val = doc.getElementById("space").value;
+  doc.querySelector('#space_out').value = val;
 
   var tags = ["p", "h1", "h2", "h3", "h4", "h5", "h6"]
   for (var j = 0; j < tags.length; j++) {
@@ -82,13 +82,13 @@ function changeSizeForAll() {
   var elements = document.getElementsByTagName("iframe");
   for (var i = 0; i < elements.length; i++) {
 
-    changeSize(elements[i]);
+    changeSize(elements[i],document);
   }
 }
 
 function changeSpacingForAll() {
   var elements = document.getElementsByTagName("iframe");
   for (var i = 0; i < elements.length; i++) {
-    changeSpacing(elements[i]);
+    changeSpacing(elements[i],document);
   }
 }
