@@ -2,8 +2,8 @@ var id = "content";
 
 function initalizeStyle(item,size,space) {
 
-  changeSize(item,doc);
-  changeSpacing(item,doc);
+  changeSize(item,size);
+  changeSpacing(item,space);
   resize(item);
 }
 
