@@ -1,17 +1,17 @@
 var id = "content";
 
-function initalizeStyle(item,doc) {
+function initalizeStyle(item,size,space) {
 
   changeSize(item,doc);
   changeSpacing(item,doc);
   resize(item);
 }
 
-function initalizedocStyle(item,doc) {
+function initalizedocStyle(item,size,space) {
   var fram=item.frameElement;
   preplink(fram);
-  changeSize(fram,doc);
-  changeSpacing(fram,doc);
+  changeSize(fram,size);
+  changeSpacing(fram,space);
   resize(fram);
 }
 
@@ -35,10 +35,9 @@ function resize(item)
     (frame.contentWindow.document.body.scrollHeight + 50) + 'px';
 }
 
-function changeSize(item, doc) {
+function changeSize(item, size) {
   var frm = item.contentWindow;
-  var val = doc.getElementById("size").value;
-  doc.querySelector('#size_out').value = val;
+  var val = size;
 
   var tags = ["h1", "h2", "h3", "h4", "h5", "h6", "p", "li"]
   var counter = 0
@@ -51,7 +50,7 @@ function changeSize(item, doc) {
     for (var i = 0; i < h1Elements.length; i++) {
       h1Elements[i].style.fontSize = ((Math.sqrt(10) - Math.sqrt(j - counter + 2)) * (val)) + "px";
 		h1Elements[i].style.paddingTop="0";
-    h1Elements[i].style.paddingBottom="10px";
+    h1Elements[i].style.paddingBottom="5px";
 
 
     }
@@ -60,9 +59,9 @@ function changeSize(item, doc) {
 
 }
 
-function changeSpacing(item,doc) {
+function changeSpacing(item,space) {
   var frm = item.contentWindow;
-  var val = doc.getElementById("space").value;
+  var val = space;
   doc.querySelector('#space_out').value = val;
 
   var tags = ["p", "h1", "h2", "h3", "h4", "h5", "h6"]
@@ -77,18 +76,18 @@ function changeSpacing(item,doc) {
 }
 
 
-function changeSizeForAll() {
+function changeSizeForAll(size) {
 
   var elements = document.getElementsByTagName("iframe");
   for (var i = 0; i < elements.length; i++) {
 
-    changeSize(elements[i],document);
+    changeSize(elements[i],size);
   }
 }
 
-function changeSpacingForAll() {
+function changeSpacingForAll(space) {
   var elements = document.getElementsByTagName("iframe");
   for (var i = 0; i < elements.length; i++) {
-    changeSpacing(elements[i],document);
+    changeSpacing(elements[i],space);
   }
 }
