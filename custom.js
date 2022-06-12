@@ -62,7 +62,6 @@ function changeSize(item, size) {
 function changeSpacing(item,space) {
   var frm = item.contentWindow;
   var val = space;
-  doc.querySelector('#space_out').value = val;
 
   var tags = ["p", "h1", "h2", "h3", "h4", "h5", "h6"]
   for (var j = 0; j < tags.length; j++) {
@@ -76,17 +75,19 @@ function changeSpacing(item,space) {
 }
 
 
-function changeSizeForAll(size) {
+function changeSizeForAll() {
 
   var elements = document.getElementsByTagName("iframe");
+  var size = document.getElementByID("size").value;
   for (var i = 0; i < elements.length; i++) {
 
     changeSize(elements[i],size);
   }
 }
 
-function changeSpacingForAll(space) {
+function changeSpacingForAll() {
   var elements = document.getElementsByTagName("iframe");
+  var space = document.getElementByID("space").value
   for (var i = 0; i < elements.length; i++) {
     changeSpacing(elements[i],space);
   }
