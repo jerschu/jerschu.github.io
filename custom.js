@@ -34,7 +34,7 @@ function resize(item)
 }
 
 function changeSize(item) {
-  var frm = item.top;
+  var frm = item;
   var val = document.getElementById("size").value;
   document.querySelector('#size_out').value = val;
 
