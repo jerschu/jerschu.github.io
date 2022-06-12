@@ -26,7 +26,7 @@ function preplink(item) {
 function resize(item)
 // function execute while load the iframe
 {
-  var frame = item;
+  var frame = item.top;
   // set the height of the iframe as 
   // the height of the iframe content
   frame.style.height =
@@ -34,7 +34,7 @@ function resize(item)
 }
 
 function changeSize(item) {
-  var frm = item;
+  var frm = item.top;
   var val = document.getElementById("size").value;
   document.querySelector('#size_out').value = val;
 
