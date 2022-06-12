@@ -26,7 +26,7 @@ function preplink(item) {
 function resize(item)
 // function execute while load the iframe
 {
-  var frame = item.top;
+  var frame = item.parent;
   // set the height of the iframe as 
   // the height of the iframe content
   frame.style.height =
