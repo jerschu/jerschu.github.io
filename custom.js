@@ -79,7 +79,7 @@ function changeSizeForAll() {
 
   var elements = document.getElementsByTagName("iframe");
   var size = document.getElementById("size").value;
-  doc.querySelector('#size_out').value = size;
+  documennt.querySelector('#size_out').value = size;
   for (var i = 0; i < elements.length; i++) {
 
     changeSize(elements[i],size);
@@ -89,7 +89,7 @@ function changeSizeForAll() {
 function changeSpacingForAll() {
   var elements = document.getElementsByTagName("iframe");
   var space = document.getElementById("space").value
-  doc.querySelector('#space_out').value = space;
+  document.querySelector('#space_out').value = space;
   for (var i = 0; i < elements.length; i++) {
     changeSpacing(elements[i],space);
   }
