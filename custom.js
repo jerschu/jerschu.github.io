@@ -1,17 +1,19 @@
 var id = "content";
 
-function initalizeStyle(item,size,space) {
+function initalizeStyle(item,size,space,para) {
 
   changeSize(item,size);
   changeSpacing(item,space);
+  changeParaSpacing(item,space,para)
   resize(item);
 }
 
-function initalizedocStyle(item,size,space) {
+function initalizedocStyle(item,size,space,para) {
   var fram=item.frameElement;
   preplink(fram);
   changeSize(fram,size);
   changeSpacing(fram,space);
+  changeParaSpacing(item,space,para)
   resize(fram);
 }
 
@@ -63,6 +65,21 @@ function changeSize(item, size) {
 
 }
 
+function changeParaSpacing(item,space) {
+  var frm = item.contentWindow;
+  var val = space;
+
+  var tags = ["p", "h1", "h2", "h3", "h4", "h5", "h6"]
+  for (var j = 0; j < tags.length; j++) {
+    var h1Elements = frm.document.getElementsByTagName(tags[j]);
+    for (var i = 0; i < h1Elements.length; i++) {
+      h1Elements[i].style.paddingBottom = space + 'px';
+
+    }
+  }
+  resize(item);
+}
+
 function changeSpacing(item,space) {
   var frm = item.contentWindow;
   var val = space;
@@ -96,5 +113,14 @@ function changeSpacingForAll() {
   document.querySelector('#space_out').value = space;
   for (var i = 0; i < elements.length; i++) {
     changeSpacing(elements[i],space);
+  }
+}
+
+function changeParaSpacingForAll() {
+  var elements = document.getElementsByTagName("iframe");
+  var space = document.getElementById("Para-space").value
+  document.querySelector('#para_space_out').value = space;
+  for (var i = 0; i < elements.length; i++) {
+    changeParaSpacing(elements[i],space);
   }
 }
