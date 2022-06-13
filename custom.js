@@ -118,7 +118,7 @@ function changeSpacingForAll() {
 
 function changeParaSpacingForAll() {
   var elements = document.getElementsByTagName("iframe");
-  var space = document.getElementById("Para-space").value
+  var space = document.getElementById("para-space").value
   document.querySelector('#para_space_out').value = space;
   for (var i = 0; i < elements.length; i++) {
     changeParaSpacing(elements[i],space);
