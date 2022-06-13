@@ -4,7 +4,7 @@ function initalizeStyle(item,size,space,para) {
 
   changeSize(item,size);
   changeSpacing(item,space);
-  changeParaSpacing(item,space,para)
+  changeParaSpacing(item,para)
   resize(item);
 }
 
@@ -13,7 +13,7 @@ function initalizedocStyle(item,size,space,para) {
   preplink(fram);
   changeSize(fram,size);
   changeSpacing(fram,space);
-  changeParaSpacing(item,space,para)
+  changeParaSpacing(item,para)
   resize(fram);
 }
 
