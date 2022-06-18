@@ -75,7 +75,7 @@ function prepPrint(){
 			ref.id=id
 			var final = "<style type='stylesheet/less'>#"+id+"{"+stylesheet+"}<//style>"
 			ref.innerHTML=subelem[i].contentWindow.document.body.innerHTML;
-			if(length(ref.children)>=3 && ref.children[3].tagName=="style"){
+			if(ref.children.length>=3 && ref.children[3].tagName=="style"){
 				ref.children[3].type="stylesheet/less";
 				ref.children[3].innerHTML="#"+id+"{"+ref.children[3].innerHTML+"}";
 			}
