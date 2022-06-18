@@ -73,7 +73,6 @@ function prepPrint(){
 			var id = subelem[i].parentElement.id;
 			var final = "<style type='stylesheet/less'>#"+id+"{"+stylesheet+"}<//style>"
 			
-		
 			subelem[i].parentElement.innerHTML=subelem[i].contentWindow.document.body.innerHTML;
 		}
 	}
