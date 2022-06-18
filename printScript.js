@@ -69,12 +69,16 @@ function prepPrint(){
 
 
 		if(subelem[i].tagName=="IFRAME"){
+			var ref=subelem[i].parentElement;
 			var stylesheet = subelem[i].contentWindow.document.head.children[3].innerHTML;
 			var id = "frame"+i;
-			subelem[i].parentElement.id=id
+			ref.id=id
 			var final = "<style type='stylesheet/less'>#"+id+"{"+stylesheet+"}<//style>"
-			
-			subelem[i].parentElement.innerHTML=subelem[i].contentWindow.document.body.innerHTML;
+			ref.innerHTML=subelem[i].contentWindow.document.body.innerHTML;
+			if(length(ref.children)>=3 && ref.children[3].tagName=="style"){
+				ref.children[3].type="stylesheet/less";
+				ref.children[3].innerHTML="#"+id+"{"+ref.children[3].innerHTML+"}";
+			}
 		}
 	}
 	window.print();
