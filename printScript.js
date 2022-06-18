@@ -67,11 +67,13 @@ function prepPrint(){
 	var subelem=document.getElementsByTagName("*");
 	for(var i=0;i<subelem.length;i++){
 
-		
+
 		if(subelem[i].tagName=="IFRAME"){
 			var stylesheet = subelem[i].contentWindow.document.head.children[3].innerHTML;
 			var id = subelem[i].parentElement.id;
 			var final = "<style type='stylesheet/less'>#"+id+"{"+stylesheet+"}<//style>"
+			
+		
 			subelem[i].parentElement.innerHTML=subelem[i].contentWindow.document.body.innerHTML;
 		}
 	}
