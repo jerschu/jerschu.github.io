@@ -84,6 +84,6 @@ function prepPrint(){
 			}
 		}
 	}
-	document.body.innerHTML+=<script src="https://cdn.jsdelivr.net/npm/less@4" type="text/javascript"></script>;
+	document.body.innerHTML+='<script src="https://cdn.jsdelivr.net/npm/less@4" type="text/javascript"></script>';
 	window.print();
 }
