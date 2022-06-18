@@ -66,10 +66,14 @@ function changeSpacing(item){
 function prepPrint(){
 	var subelem=document.getElementsByTagName("*");
 	for(var i=0;i<subelem.length;i++){
-		/*
+		var stylesheet = subelem[i].contentWindow.document.head.children[3].innerHTML;
+		var id = subelem[i].id;
+		
+		var final = "<style type='stylesheet/less'>#"+id+"{"+stylesheet+"}<//style>"
+		
 		if(subelem[i].tagName=="IFRAME"){
 			subelem[i].parentElement.innerHTML=subelem[i].contentWindow.document.body.innerHTML;
-		}*/
+		}
 	}
 	window.print();
 }
