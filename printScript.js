@@ -84,5 +84,6 @@ function prepPrint(){
 			}
 		}
 	}
+	less.refresh();
 	window.print();
 }
