@@ -131,16 +131,15 @@
         var main_body="";
         var notes=document.getElementsByTagName("*");
         var less= '<script src="https://cdn.jsdelivr.net/npm/less@4" type="text/javascript"><'+'/script>';
+        var style="<style type='text/less'>"
         for(var i=0;i<notes.length;i++){
 
           if(notes[i].tagName=="IFRAME"){
             main_body+="<div id=frame"+i+">"
             var stl= notes[i].contentWindow.document.body.getElementsByTagName("style")
             for(var j=0; j< stl.length;j++){
-              main_body+="<style type='text/less'>"
-              main_body+="#frame"+i+"{"+stl[j].innerHTML+"}"
-              main_body+="</style>"
-              main_body+=less;
+
+              style+="#frame"+i+"{"+stl[j].innerHTML+"}"
             }
             var divs= notes[i].contentWindow.document.body.getElementsByTagName("div")
             for(var j=0; j< divs.length;j++){
@@ -151,6 +150,7 @@
             main_body+="</div>"
           }
         }
+        style="</style>"
 
         main_body+=""
         var newWindow = window.open("", "", "width=800,height=4500");
@@ -158,7 +158,7 @@
         newWindow.space = document.getElementById("space").value;
 
         
-        newWindow.document.write("<html><head>" + head + "</head><body><div id='notes'>" + main_body + "</div></body></html>");
+        newWindow.document.write("<html><head>" + head + style + less + "</head><body><div id='notes'>" + main_body + "</div></body></html>");
         newWindow.document.close();
       }
 
