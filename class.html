@@ -129,14 +129,14 @@
         var main_body="";
         var notes=document.getElementsByTagName("*");
         var less= '<script src="https://cdn.jsdelivr.net/npm/less@4" type="text/javascript"><'+'/script>';
-        var style="<style type='text/less'>"
+        var style="<style type='text/css'>"
         for(var i=0;i<notes.length;i++){
 
           if(notes[i].tagName=="IFRAME"){
             main_body+="<div id=frame"+i+">"
             var stl= notes[i].contentWindow.document.body.getElementsByTagName("style")
             for(var j=0; j< stl.length;j++){
-              style+="#frame"+i+" {\n"+stl[j].innerHTML+"\n}\n"
+              style+=stl[j].innerHTML
             }
             var divs= notes[i].contentWindow.document.body.getElementsByTagName("div")
             for(var j=0; j< divs.length;j++){
