@@ -136,7 +136,7 @@
             main_body+="<div id=frame"+i+">"
             var stl= notes[i].contentWindow.document.body.getElementsByTagName("style")
             for(var j=0; j< stl.length;j++){}
-              style+="#frame"+i+"{"+stl[j].innerHTML+"}"
+              style+="#frame"+i+" {\n"+stl[j].innerHTML+"\n}\n"
             }
             var divs= notes[i].contentWindow.document.body.getElementsByTagName("div")
             for(var j=0; j< divs.length;j++){
