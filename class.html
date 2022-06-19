@@ -135,12 +135,12 @@
           if(notes[i].tagName=="IFRAME"){
             main_body+="<div id=frame"+i+">"
             var stl= notes[i].contentWindow.document.body.getElementsByTagName("style")
-            for(var j=0; j< stl.length;j++){}
+            for(var j=0; j< stl.length;j++){
               style+="#frame"+i+" {\n"+stl[j].innerHTML+"\n}\n"
             }
             var divs= notes[i].contentWindow.document.body.getElementsByTagName("div")
             for(var j=0; j< divs.length;j++){
-              main_body+="<div id='"+divs[j].id+"''>"
+              main_body+="<div id='"+divs[j].id+"'>"
               main_body+=divs[j].innerHTML
               main_body+="</div>"
             }
