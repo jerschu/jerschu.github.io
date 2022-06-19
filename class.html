@@ -121,16 +121,39 @@
       function printDiv() {
         var head = '<meta name="viewport" content="width=device-width, initial-scale=1">'
         head += '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">'
-        head += '<link rel="stylesheet" href="style.css"><link rel="stylesheet" href="customize.css">'
+        head += '<link rel="stylesheet" href="style.css"><link rel="stylesheet" href="h2.css"><link rel="stylesheet" href="customize.css">'
         head += '<script type="text/javascript" src="heading.js"><'
         head += '/script>'
         head += '<script type="text/javascript" src="printScript.js"><'
         head += '/script>'
-        var newWindowContent = document.getElementById('notes').innerHTML;
+        head+="<script src='https://cdn.jsdelivr.net/npm/less@4' type='text/javascript'><"
+        head+="/script>"
+
+        var notes = document.getElementById('notes').getElementsByTagName("iframe");
+        var main_body=""
+        for(var i; i< notes.length;i++){
+            main_body+="<div id=frame"+i+">"
+            var stl= notes[i].contentWindow.document.body.getElementsByTagName("style")
+            for(var j; j< stl.length;j++){
+              main_body+="<style type='text/less'>"
+              main_body+="#frame"+i+"{"+stl.innerHTML+"}"
+              main_body+="</style>"
+            }
+            var divs= notes[i].contentWindow.document.body.getElementsByTagName("div")
+            for(var j; j< divs.length;j++){
+              main_body+="<div id='"+divs[j].id+"''>"
+              main_body+=divs[j].innerHTML
+              main_body+="</div>"
+            }
+            main_body+="</div>"
+        }
+        main_body+=""
         var newWindow = window.open("", "", "width=800,height=4500");
         newWindow.size = document.getElementById("size").value;
         newWindow.space = document.getElementById("space").value;
-        newWindow.document.write("<html><head>" + head + "</head><body onload='prepPrint()'><div id='notes'>" + newWindowContent + "</div></body><script src='https://cdn.jsdelivr.net/npm/less@4' type='text/javascript'><//script></html>");
+
+        var less= '<script src="https://cdn.jsdelivr.net/npm/less@4" type="text/javascript"><'+'/script>';
+        newWindow.document.write("<html><head>" + head + "</head><body><div id='notes'>" + main_body + "</div>"+less+"</body></html>");
         newWindow.document.close();
       }
 
