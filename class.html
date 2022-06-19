@@ -129,24 +129,27 @@
         head+="<script src='https://cdn.jsdelivr.net/npm/less@4' type='text/javascript'><"
         head+="/script>"
 
-        var notes = document.getElementById('notes').getElementsByTagName("iframe");
-        var main_body=""
-        for(var i; i< notes.length;i++){
+        var notes=document.getElementsByTagName("*");
+        for(var i=0;i<notes.length;i++){
+
+          if(notes[i].tagName=="IFRAME"){
             main_body+="<div id=frame"+i+">"
             var stl= notes[i].contentWindow.document.body.getElementsByTagName("style")
-            for(var j; j< stl.length;j++){
+            for(var j=0; j< stl.length;j++){
               main_body+="<style type='text/less'>"
               main_body+="#frame"+i+"{"+stl.innerHTML+"}"
               main_body+="</style>"
             }
             var divs= notes[i].contentWindow.document.body.getElementsByTagName("div")
-            for(var j; j< divs.length;j++){
+            for(var j=0; j< divs.length;j++){
               main_body+="<div id='"+divs[j].id+"''>"
               main_body+=divs[j].innerHTML
               main_body+="</div>"
             }
             main_body+="</div>"
+          }
         }
+
         main_body+=""
         var newWindow = window.open("", "", "width=800,height=4500");
         newWindow.size = document.getElementById("size").value;
