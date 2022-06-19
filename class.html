@@ -137,7 +137,7 @@
             var stl= notes[i].contentWindow.document.body.getElementsByTagName("style")
             for(var j=0; j< stl.length;j++){
               main_body+="<style type='text/less'>"
-              main_body+="#frame"+i+"{"+stl.innerHTML+"}"
+              main_body+="#frame"+i+"{"+stl[j].innerHTML+"}"
               main_body+="</style>"
             }
             var divs= notes[i].contentWindow.document.body.getElementsByTagName("div")
