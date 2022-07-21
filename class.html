@@ -108,17 +108,17 @@
 	var para =document.getElementById("para-space").value;
         for (var i = 0; i < coursedocs.length; i++) {
           if (coursedocs[i][0] == "doc") {
-            note = '<div id="frame'+i+'"><iframe id="Iframe" src="' + coursedocs[i][1] + '.htm" style="width: 100%; height:1000px" frameBorder="0" scrolling=no onload="initalizeStyle(this'+size+','+space+','+para+')"></iframe></div>';
+            note = '<div id="frame'+i+'"><button class="print-button" onclick="printDiv('+i+')"><span class="print-icon"></span></button><iframe id="Iframe" src="' + coursedocs[i][1] + '.htm" style="width: 100%; height:1000px" frameBorder="0" scrolling=no onload="initalizeStyle(this'+size+','+space+','+para+')"></iframe></div>';
           }
           if (coursedocs[i][0] == "link") {
 	    var col="'"+coursedocs[i][2]+"'";
-            note = '<div id="frame'+i+'"><iframe id="Iframe" src="' + coursedocs[i][1]+'" style="width: 100%; height:1000px; visibility:hidden;" frameBorder="0" scrolling=no onload="init(this,'+i+','+col+')"></iframe></div>';
+            note = '<div id="frame'+i+'"><button class="print-button" onclick="printDiv('+i+')"><iframe id="Iframe" src="' + coursedocs[i][1]+'" style="width: 100%; height:1000px; visibility:hidden;" frameBorder="0" scrolling=no onload="init(this,'+i+','+col+')"></iframe></div>';
           }
           contentnotes.innerHTML += note;
         }
       }
 
-      function printDiv() {
+      function printDiv(frmNum) {
         var head = '<meta name="viewport" content="width=device-width, initial-scale=1">'
         head += '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">'
         head += '<link rel="stylesheet" href="style.css"><link rel="stylesheet" href="h2.css"><link rel="stylesheet" href="customize.css">'
@@ -127,24 +127,29 @@
         head += '<script type="text/javascript" src="printScript.js"><'
         head += '/script>'
         var main_body="";
+	var counter=0
         var notes=document.getElementsByTagName("*");
         var less= '<script src="https://cdn.jsdelivr.net/npm/less@4" type="text/javascript"><'+'/script>';
         var style="<style type='text/css'>"
         for(var i=0;i<notes.length;i++){
 
           if(notes[i].tagName=="IFRAME"){
-            main_body+="<div id=frame"+i+">"
-            var stl= notes[i].contentWindow.document.body.getElementsByTagName("style")
-            for(var j=0; j< stl.length;j++){
-              style+=stl[j].innerHTML
-            }
-            var divs= notes[i].contentWindow.document.body.getElementsByTagName("div")
-            for(var j=0; j< divs.length;j++){
-              main_body+="<div id='"+divs[j].id+"'>"
-              main_body+=divs[j].innerHTML
-              main_body+="</div>"
-            }
-            main_body+="</div>"
+	    if(counter==frmNum){
+		    main_body+="<div id=frame"+i+">"
+		    var stl= notes[i].contentWindow.document.body.getElementsByTagName("style")
+		    for(var j=0; j< stl.length;j++){
+		      style+=stl[j].innerHTML
+		    }
+		    var divs= notes[i].contentWindow.document.body.getElementsByTagName("div")
+		    for(var j=0; j< divs.length;j++){
+		      main_body+="<div id='"+divs[j].id+"'>"
+		      main_body+=divs[j].innerHTML
+		      main_body+="</div>"
+		    }
+		    main_body+="</div>"
+	    }
+	    counter++;
+	    
           }
         }
         style+="</style>"
@@ -171,7 +176,6 @@
 
     <div class='content'>
       <div id="setting">
-        <button class="print-button" onclick="printDiv()"><span class="print-icon"></span></button>
         <div class="font">
           <label for="size">Font Size</label>
           <input id="size" class="slider" type="range" min="0" max="50" value="12" step="1" oninput="changeSizeForAll()">
