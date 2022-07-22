@@ -3,7 +3,7 @@
 
 }
 @media (max-width:960px) {
-  zoom: 50%;
+  body{zoom: 50%;}
 }
 body {
   margin: 0;
