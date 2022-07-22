@@ -48,9 +48,8 @@ function changeSize(item, size) {
     var h1Elements = frm.document.getElementsByTagName(tags[j]);
     if (h1Elements.length == 0) {
       counter++;
-    }
-    if (j>5){
-	counter++;
+    }else if(j>5){
+	    counter++;
     }
     for (var i = 0; i < h1Elements.length; i++) {
       h1Elements[i].style.fontSize = ((Math.sqrt(10) - Math.sqrt(j - counter + 2)) * (val)) + "px";
