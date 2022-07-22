@@ -112,7 +112,7 @@
           }
           if (coursedocs[i][0] == "link") {
 	    var col="'"+coursedocs[i][2]+"'";
-            note = '<div id="frame'+i+'"><button class="print-button" onclick="printDiv('+i+')"><iframe id="Iframe" src="' + coursedocs[i][1]+'" style="width: 100%; height:1000px; visibility:hidden;" frameBorder="0" scrolling=no onload="init(this,'+i+','+col+')"></iframe></div>';
+            note = '<div id="frame'+i+'"><iframe id="Iframe" src="' + coursedocs[i][1]+'" style="width: 100%; height:1000px; visibility:hidden;" frameBorder="0" scrolling=no onload="init(this,'+i+','+col+')"></iframe></div>';
           }
           contentnotes.innerHTML += note;
         }
