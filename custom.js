@@ -53,7 +53,7 @@ function changeSize(item, size) {
     }
     for (var i = 0; i < h1Elements.length; i++) {
       h1Elements[i].style.fontSize = ((Math.sqrt(10) - Math.sqrt(j - counter + 2)) * (val)) + "px";
-      if(j==5 && i==i &&){
+      if(j==5 && i==i){
         h1Elements[i].style.fontSize = ((Math.sqrt(10) - 1) * (val)) + "px";
       }
 		h1Elements[i].style.paddingTop="0";
