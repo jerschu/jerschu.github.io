@@ -108,11 +108,11 @@
 	var para =document.getElementById("para-space").value;
         for (var i = 0; i < coursedocs.length; i++) {
           if (coursedocs[i][0] == "doc") {
-            note = '<div><iframe id="Iframe" src="' + coursedocs[i][1] + '.htm" style="width: 100%; height:1000px" frameBorder="0" scrolling=no onload="initalizeStyle(this'+size+','+space+','+para+')"></iframe></div>';
+            note = '<div id="frame'+i+'"><iframe id="Iframe" src="' + coursedocs[i][1] + '.htm" style="width: 100%; height:1000px" frameBorder="0" scrolling=no onload="initalizeStyle(this'+size+','+space+','+para+')"></iframe></div>';
           }
           if (coursedocs[i][0] == "link") {
 	    var col="'"+coursedocs[i][2]+"'";
-            note = '<div><iframe id="Iframe" src="' + coursedocs[i][1]+'" style="width: 100%; height:1000px; visibility:hidden;" frameBorder="0" scrolling=no onload="init(this,'+i+','+col+')"></iframe></div>';
+            note = '<div id="frame'+i+'"><iframe id="Iframe" src="' + coursedocs[i][1]+'" style="width: 100%; height:1000px; visibility:hidden;" frameBorder="0" scrolling=no onload="init(this,'+i+','+col+')"></iframe></div>';
           }
           contentnotes.innerHTML += note;
         }
@@ -130,7 +130,7 @@
         var newWindow = window.open("", "", "width=800,height=4500");
         newWindow.size = document.getElementById("size").value;
         newWindow.space = document.getElementById("space").value;
-        newWindow.document.write("<html><head>" + head + "</head><body onload='prepPrint()'><div id='notes'>" + newWindowContent + "</div></body></html>");
+        newWindow.document.write("<html><head>" + head + "</head><body onload='prepPrint()'><div id='notes'>" + newWindowContent + "</div></body><script src='https://cdn.jsdelivr.net/npm/less@4' type='text/javascript'><//script></html>");
         newWindow.document.close();
       }
 
