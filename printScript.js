@@ -66,24 +66,10 @@ function changeSpacing(item){
 function prepPrint(){
 	var subelem=document.getElementsByTagName("*");
 	for(var i=0;i<subelem.length;i++){
-
-
+		/*
 		if(subelem[i].tagName=="IFRAME"){
-			var ref=subelem[i].parentElement;
-			var stylesheet = subelem[i].contentWindow.document.head.children[3].innerHTML;
-			var id = "frame"+i;
-			ref.id=id
-			var final = "<style type='stylesheet/less'>#"+id+"{"+stylesheet+"}<//style>"
-			ref.innerHTML=subelem[i].contentWindow.document.body.innerHTML;
-			console.log(ref.children.length,ref.children[3].tagName);
-			if(ref.children.length>=3 && ref.children[3].tagName=="STYLE"){
-				ref.children[3].type="text/less";
-				console.log(ref.children[3].type);
-				ref.children[3].innerHTML="#"+id+"{"+ref.children[3].innerHTML+"}";
-				console.log(ref.children[3].innerHTML);
-			}
-		}
+			subelem[i].parentElement.innerHTML=subelem[i].contentWindow.document.body.innerHTML;
+		}*/
 	}
-	document.body.innerHTML+='<script src="https://cdn.jsdelivr.net/npm/less@4" type="text/javascript"></script>';
 	window.print();
 }

@@ -48,14 +48,13 @@ function changeSize(item, size) {
     var h1Elements = frm.document.getElementsByTagName(tags[j]);
     if (h1Elements.length == 0) {
       counter++;
-    }else if(j>5){
-	    counter++;
+    }
+    if (j>5){
+	counter++;
     }
     for (var i = 0; i < h1Elements.length; i++) {
       h1Elements[i].style.fontSize = ((Math.sqrt(10) - Math.sqrt(j - counter + 2)) * (val)) + "px";
-      if(j==5 && i==1){
-        h1Elements[i].style.fontSize = ((Math.sqrt(10) - 1) * (val)) + "px";
-      }
+
 		h1Elements[i].style.paddingTop="0";
     h1Elements[i].style.paddingBottom="5px";
 

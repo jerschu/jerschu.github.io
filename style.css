@@ -2,9 +2,6 @@
   --primary: rgb(206,184,136);
 
 }
-@media (max-width:960px) {
-  body{zoom: 50%;}
-}
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
