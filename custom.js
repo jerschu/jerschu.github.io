@@ -45,7 +45,7 @@ function changeSize(item, size) {
   var counter = 0
   for (var j = 0; j < tags.length; j++) {
 
-    var h1Elements = frm.document.getElementsByTagName(tags[j]);
+    var h1Elements = frm.document.querySelectorAll(tags[j]);
     if (h1Elements.length == 0) {
       counter++;
     }
@@ -71,7 +71,7 @@ function changeParaSpacing(item,space) {
 
   var tags = ["p", "h1", "h2", "h3", "h4", "h5", "h6"]
   for (var j = 0; j < tags.length; j++) {
-    var h1Elements = frm.document.getElementsByTagName(tags[j]);
+    var h1Elements = frm.document.querySelectorAll(tags[j]);
     for (var i = 0; i < h1Elements.length; i++) {
       h1Elements[i].style.paddingBottom = space + 'px';
 
@@ -86,7 +86,8 @@ function changeSpacing(item,space) {
 
   var tags = ["p", "h1", "h2", "h3", "h4", "h5", "h6"]
   for (var j = 0; j < tags.length; j++) {
-    var h1Elements = frm.document.getElementsByTagName(tags[j]);
+	  
+    var h1Elements = frm.document.querySelectorAll(tags[j]);
     for (var i = 0; i < h1Elements.length; i++) {
       h1Elements[i].style.lineHeight = (val*100) + '%';
 
