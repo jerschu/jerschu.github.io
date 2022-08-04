@@ -38,14 +38,14 @@ function resize(item)
 }
 
 function changeSize(item, size) {
-  var frm = item.contentWindow;
+
   var val = size;
 
   var tags = ["h1", "h3", "h4", "h5", "h6", "p", "h2","li"]
   var counter = 0
   for (var j = 0; j < tags.length; j++) {
 
-    var h1Elements = frm.document.querySelectorAll(tags[j]);
+    var h1Elements = item.querySelectorAll(tags[j]);
     if (h1Elements.length == 0) {
       counter++;
     }
@@ -66,12 +66,12 @@ function changeSize(item, size) {
 }
 
 function changeParaSpacing(item,space) {
-  var frm = item.contentWindow;
+
   var val = space;
 
   var tags = ["p", "h1", "h2", "h3", "h4", "h5", "h6"]
   for (var j = 0; j < tags.length; j++) {
-    var h1Elements = frm.document.querySelectorAll(tags[j]);
+    var h1Elements = item.querySelectorAll(tags[j]);
     for (var i = 0; i < h1Elements.length; i++) {
       h1Elements[i].style.paddingBottom = space + 'px';
 
@@ -81,13 +81,12 @@ function changeParaSpacing(item,space) {
 }
 
 function changeSpacing(item,space) {
-  var frm = item.contentWindow;
   var val = space;
 
   var tags = ["p", "h1", "h2", "h3", "h4", "h5", "h6"]
   for (var j = 0; j < tags.length; j++) {
 	  
-    var h1Elements = frm.document.querySelectorAll(tags[j]);
+    var h1Elements = item.querySelectorAll(tags[j]);
     for (var i = 0; i < h1Elements.length; i++) {
       h1Elements[i].style.lineHeight = (val*100) + '%';
 
