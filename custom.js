@@ -98,7 +98,7 @@ function changeSpacing(item,space) {
 
 function changeSizeForAll() {
 
-  var elements = document.getElementsByTagName("iframe");
+  var elements = document.getElementsByClassName("notediv");
   var size = document.getElementById("size").value;
   document.querySelector('#size_out').value = size;
   for (var i = 0; i < elements.length; i++) {
@@ -108,7 +108,7 @@ function changeSizeForAll() {
 }
 
 function changeSpacingForAll() {
-  var elements = document.getElementsByTagName("iframe");
+  var elements = document.getElementsByClassName("notediv");
   var space = document.getElementById("space").value
   document.querySelector('#space_out').value = space;
   for (var i = 0; i < elements.length; i++) {
@@ -117,7 +117,7 @@ function changeSpacingForAll() {
 }
 
 function changeParaSpacingForAll() {
-  var elements = document.getElementsByTagName("iframe");
+  var elements = document.getElementsByClassName("notediv");
   var space = document.getElementById("para-space").value
   document.querySelector('#para_space_out').value = space;
   for (var i = 0; i < elements.length; i++) {
