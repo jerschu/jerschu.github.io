@@ -17,11 +17,9 @@ function initalizedocStyle(item,size,space,para) {
 }
 
 function preplink(item) {
-  var frm = (item.contentWindow || item.contentDocument);
-  frm.document.firstChild.children[1].children[4].style="max-width:95%; margin:2.5%;"
-  var h1Elements = frm.document.getElementsByTagName("span");
-  for (var i = 0; i < h1Elements.length; i++) {
-    h1Elements[i].className = "";
+  var spans = item.querySelectorAll("span");
+  for (var i = 0; i < spans.length; i++) {
+    spans[i].className = "";
   }
 }
 
