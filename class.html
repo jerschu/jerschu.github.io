@@ -1,174 +1,176 @@
 <html>
 
-  <head>
-    <title>Boiler Schubox</title>
+<head>
+  <title>Boiler Schubox</title>
 
 
-    <style>
-      .box {
-        width: 150px;
-        height: 30px;
-        border: 1px solid #999;
-        font-size: 18px;
-        color: rgb(206, 184, 136);
-        background-color: #eee;
-        border-radius: 5px;
-        box-shadow: 4px 4px #ccc;
-      }
+  <style>
+    .box {
+      width: 150px;
+      height: 30px;
+      border: 1px solid #999;
+      font-size: 18px;
+      color: rgb(206, 184, 136);
+      background-color: #eee;
+      border-radius: 5px;
+      box-shadow: 4px 4px #ccc;
+    }
+  </style>
 
-    </style>
-	  
-    <script type="text/javascript" src="heading.js"></script>
-	  <link rel="stylesheet" href="style.css">
-	  <script type="text/javascript" src="heading.js"></script>
-	  <script type="text/javascript" src="custom.js"></script>
-    <script>
-      //["doc/link","name"]
-      var documents = [
-        ["CS_159", [
-          ["CS_159"]
-        ]],
-        ["MA_261", [
-          ["MA_261_final"]
-        ]],
-        ["ENGR_133", [
-          ["ENGR_133"],
-          ["ENGRmatlab"]
-        ]],
-        ["ECON_251", [
-          ["https://docs.google.com/document/d/e/2PACX-1vR4gmHvazyP5XD6qz2-oodZyDwUxZP5CM_ESo0jbFGrsVtBP6RyadM7H98NHIQ7jw/pub?embedded=true","white"],
-	  ["https://docs.google.com/document/d/e/2PACX-1vTFxVIgVrCXEwkd0Jx9yG8T_lATHszpvzg7T26yHIpnEo20jruLUYHKvhF0cn01-A/pub?embedded=true","white"]
-        ]],
-	 ["ME_200", [
-          ["https://docs.google.com/document/d/e/2PACX-1vTv01xUTOkp0ocox5DRL_koS-nZl3fABj8tWCknFaEFk6qIo1aCXLpnay7-cTrdiw/pub?embedded=true","white"]
-	]],
-         ["MA_265",[
-	  ["https://docs.google.com/document/d/e/2PACX-1vR7h0I70mx0VeRSfHWPjbEe59i89prY4NqSigKKhujhmgPEm6FPgoyAXaWbwN5XCnUu8m1vahmJ-Qwb/pub?embedded=true","white"]
-        ]]
-      ];
-	var addedstyles=["h2{border-top: 0px solid white !important;border-bottom: 0px solid white !important;font-weight: normal !important;}",
-			 ":not(h2)+h2,h2:first-child{margin: 3px 0px; border-top: 3px solid white !important;}",
-			 "h2+:not(h2), h2:last-child{margin: 3px 0px; border-bottom: 3px solid white !important;}",
-			 "img{max-width:70% !important;height:auto !important; }",
-			 ".doc-content{width:85% !important;max-width:80% !important;padding: 50px !important;margin: 0 auto !important;Margin-top:20px!important}"];
-       function printDiv() {
-            var divContents = document.getElementById("notes").innerHTML;
-            var a = window.open('', '', 'height=500, width=500');
-            a.document.write('<html>');
-            a.document.write('<body>);
+  <script type="text/javascript" src="heading.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <script type="text/javascript" src="heading.js"></script>
+  <script type="text/javascript" src="custom.js"></script>
+  <script>
+    //["doc/link","name"]
+    var documents = [
+      ["CS_159", [
+        ["CS_159"]
+      ]],
+      ["MA_261", [
+        ["MA_261_final"]
+      ]],
+      ["ENGR_133", [
+        ["ENGR_133"],
+        ["ENGRmatlab"]
+      ]],
+      ["ECON_251", [
+        ["https://docs.google.com/document/d/e/2PACX-1vR4gmHvazyP5XD6qz2-oodZyDwUxZP5CM_ESo0jbFGrsVtBP6RyadM7H98NHIQ7jw/pub?embedded=true", "white"],
+        ["https://docs.google.com/document/d/e/2PACX-1vTFxVIgVrCXEwkd0Jx9yG8T_lATHszpvzg7T26yHIpnEo20jruLUYHKvhF0cn01-A/pub?embedded=true", "white"]
+      ]],
+      ["ME_200", [
+        ["https://docs.google.com/document/d/e/2PACX-1vTv01xUTOkp0ocox5DRL_koS-nZl3fABj8tWCknFaEFk6qIo1aCXLpnay7-cTrdiw/pub?embedded=true", "white"]
+      ]],
+      ["MA_265", [
+        ["https://docs.google.com/document/d/e/2PACX-1vR7h0I70mx0VeRSfHWPjbEe59i89prY4NqSigKKhujhmgPEm6FPgoyAXaWbwN5XCnUu8m1vahmJ-Qwb/pub?embedded=true", "white"]
+      ]]
+    ];
+    var addedstyles = ["h2{border-top: 0px solid white !important;border-bottom: 0px solid white !important;font-weight: normal !important;}",
+      ":not(h2)+h2,h2:first-child{margin: 3px 0px; border-top: 3px solid white !important;}",
+      "h2+:not(h2), h2:last-child{margin: 3px 0px; border-bottom: 3px solid white !important;}",
+      "img{max-width:70% !important;height:auto !important; }",
+      ".doc-content{width:85% !important;max-width:80% !important;padding: 50px !important;margin: 0 auto !important;Margin-top:20px!important}"];
+
+    function printDiv() {
+      var divContents = document.getElementById("notes").innerHTML;
+      var a = window.open('', '', 'height=500, width=500');
+      a.document.write('<html>');
+      a.document.write('<body>');
             a.document.write(divContents);
-            a.document.write('</body></html>');
-            a.document.close();
-            a.print();
-        }
-	    
-	    
-      function init(par,num, col) {
-          var url = documents[3][1][num][0];
-          if (url.startsWith("https://docs.google.com/document/d/")) {
-            // create div and replace iframe
-            var d = document.createElement('div');
-	    d.setAttribute('id','noteDiv'+num);
-	    d.classList.add('notediv');
-            par.appendChild(d);
-						
-            // CORS request
-            var xhr = new XMLHttpRequest();
-            xhr.open('GET', url, true);
-            xhr.onload = function() {
-              // display response
-              d.innerHTML = xhr.responseText;
-	      var stylearray=d.children[1].innerText.split("}")
-	      var newStyle=""
-	      for(var i=0;i<stylearray.length;i++){
-		  newStyle+="#noteDiv"+num +" "+ stylearray[i]+"}\n"
-	      }
-	      for(var i=0;i<addedstyles.length;i++){
-		  newStyle+="#noteDiv"+num +" "+ addedstyles[i]+"\n"
-	      }
-		    
-		newStyle+="#noteDiv"+num +" mjx-math{color:"+col+"}\n"
-		d.children[1].innerText=newStyle;
-		    
-		
-		    
-		var spans=document.getElementsByTagName("span");
-		for(var i=0;i<spans.length;i++){
-			spans[i].removeAttribute('style');
-			
-		}
-		 preplink(d)
-		 MathJax.typesetPromise();
-            };
-            xhr.send();
-	    
-          }
-        }
-     function loadNotes() {
-        var coursedocs = []
-        var data = "ECON_251";
-        for (var i = 0; i < documents.length; i++) {
-          if (data == documents[i][0]) {
-            coursedocs = documents[i][1];
-          }
-        }
+      a.document.write('</body></html>');
+      a.document.close();
+      a.print();
+    }
 
-        var contentnotes = document.getElementById("notes");
-	var size =document.getElementById("size").value;
-	var space =document.getElementById("space").value;
-	var para =document.getElementById("para-space").value;
-        for (var i = 0; i < coursedocs.length; i++) {
-            var col="'"+coursedocs[i][1]+"'";
-	    init(contentnotes,i,col);
+
+    function init(par, num, col) {
+      var url = documents[3][1][num][0];
+      if (url.startsWith("https://docs.google.com/document/d/")) {
+        // create div and replace iframe
+        var d = document.createElement('div');
+        d.setAttribute('id', 'noteDiv' + num);
+        d.classList.add('notediv');
+        par.appendChild(d);
+
+        // CORS request
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', url, true);
+        xhr.onload = function () {
+          // display response
+          d.innerHTML = xhr.responseText;
+          var stylearray = d.children[1].innerText.split("}")
+          var newStyle = ""
+          for (var i = 0; i < stylearray.length; i++) {
+            newStyle += "#noteDiv" + num + " " + stylearray[i] + "}\n"
+          }
+          for (var i = 0; i < addedstyles.length; i++) {
+            newStyle += "#noteDiv" + num + " " + addedstyles[i] + "\n"
+          }
+
+          newStyle += "#noteDiv" + num + " mjx-math{color:" + col + "}\n"
+          d.children[1].innerText = newStyle;
+
+
+
+          var spans = document.getElementsByTagName("span");
+          for (var i = 0; i < spans.length; i++) {
+            spans[i].removeAttribute('style');
+
+          }
+          preplink(d)
+          MathJax.typesetPromise();
+        };
+        xhr.send();
+
+      }
+    }
+    function loadNotes() {
+      var coursedocs = []
+      var data = "ECON_251";
+      for (var i = 0; i < documents.length; i++) {
+        if (data == documents[i][0]) {
+          coursedocs = documents[i][1];
         }
       }
 
-
-      function loadAll(){
-	      loadHeader();
-	      loadNotes();
+      var contentnotes = document.getElementById("notes");
+      var size = document.getElementById("size").value;
+      var space = document.getElementById("space").value;
+      var para = document.getElementById("para-space").value;
+      for (var i = 0; i < coursedocs.length; i++) {
+        var col = "'" + coursedocs[i][1] + "'";
+        init(contentnotes, i, col);
       }
-    </script>
-	  <script src='https://polyfill.io/v3/polyfill.min.js?features=es6'></script>
-	  <script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js'></script>
+    }
 
-  </head>
+
+    function loadAll() {
+      loadHeader();
+      loadNotes();
+    }
+  </script>
+  <script src='https://polyfill.io/v3/polyfill.min.js?features=es6'></script>
+  <script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js'></script>
+
+</head>
 
 <body onload="loadAll()">
-	<header>
+  <header>
 
-	</header>
+  </header>
 
-    <div class='content'>
-      <div id="setting">
-	      
-	<button class="print-button" onclick="printDiv()"><span class="print-icon"></span></button>
-        <div class="font">
-          <label for="size">Font Size</label>
-          <input id="size" class="slider" type="range" min="0" max="50" value="12" step="1" oninput="changeSizeForAll()">
-          <output for="size" id="size_out" style="width:100px">12</output>
-        </div>
-        <div class="font">
-          <label for="space">Line Spacing</label>
-          <input id="space" class="slider" type="range" min="1" max="2" value="1.1" step="0.01" oninput="changeSpacingForAll()">
-          <output for="space" id="space_out" style="width:100px">1.1</output>
-        </div>
-	<div class="font">
-          <label for="space">Paragraph Spacing</label>
-          <input id="para-space" class="slider" type="range" min="0" max="25" value="5" step="0.1" oninput="changeParaSpacingForAll()">
-          <output for="para-space" id="para_space_out" style="width:100px">5</output>
-        </div>
+  <div class='content'>
+    <div id="setting">
 
-
+      <button class="print-button" onclick="printDiv()"><span class="print-icon"></span></button>
+      <div class="font">
+        <label for="size">Font Size</label>
+        <input id="size" class="slider" type="range" min="0" max="50" value="12" step="1" oninput="changeSizeForAll()">
+        <output for="size" id="size_out" style="width:100px">12</output>
       </div>
-      <div id="notes"></div>
+      <div class="font">
+        <label for="space">Line Spacing</label>
+        <input id="space" class="slider" type="range" min="1" max="2" value="1.1" step="0.01"
+          oninput="changeSpacingForAll()">
+        <output for="space" id="space_out" style="width:100px">1.1</output>
+      </div>
+      <div class="font">
+        <label for="space">Paragraph Spacing</label>
+        <input id="para-space" class="slider" type="range" min="0" max="25" value="5" step="0.1"
+          oninput="changeParaSpacingForAll()">
+        <output for="para-space" id="para_space_out" style="width:100px">5</output>
+      </div>
 
 
     </div>
+    <div id="notes"></div>
+
+
+  </div>
 
 
 
 
-  </body>
+</body>
 
 </html>
