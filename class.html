@@ -51,16 +51,15 @@
       "img{max-width:70% !important;height:auto !important; }",
       ".doc-content{width:85% !important;max-width:80% !important;padding: 50px !important;margin: 0 auto !important;Margin-top:20px!important}"];
 
-    function printDiv() {
-      var divContents = document.getElementById("notes").innerHTML;
-      var a = window.open('', '', 'height=500, width=500');
-      a.document.write('<html>');
-      a.document.write('<body>');
-            a.document.write(divContents);
-      a.document.write('</body></html>');
-      a.print();
-      a.document.close();
-
+    function printDivContent() {
+      var divElementContents = document.getElementById("notes").innerHTML;
+      var windows = window.open('', '', 'height=400, width=400');
+      windows.document.write('<html>');
+      windows.document.write('<body >');
+      windows.document.write(divElementContents);
+      windows.document.write('</body></html>');
+      windows.document.close();
+      windows.print();
     }
 
 
