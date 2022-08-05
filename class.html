@@ -51,7 +51,19 @@
 			 "h2+:not(h2), h2:last-child{margin: 3px 0px; border-bottom: 3px solid white !important;}",
 			 "img{max-width:70% !important;height:auto !important; }",
 			 ".doc-content{width:85% !important;max-width:80% !important;padding: 50px !important;margin: 0 auto !important;Margin-top:20px!important}"];
-        function init(par,num, col) {
+       function printDiv() {
+            var divContents = document.getElementById("GFG").innerHTML;
+            var a = window.open('', '', 'height=500, width=500');
+            a.document.write('<html>');
+            a.document.write('<body > <h1>Div contents are <br>');
+            a.document.write(divContents);
+            a.document.write('</body></html>');
+            a.document.close();
+            a.print();
+        }
+	    
+	    
+      function init(par,num, col) {
           var url = documents[3][1][num][0];
           if (url.startsWith("https://docs.google.com/document/d/")) {
             // create div and replace iframe
