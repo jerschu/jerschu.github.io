@@ -5,7 +5,6 @@ function initalizeStyle(item,size,space,para) {
   changeSize(item,size);
   changeSpacing(item,space);
   changeParaSpacing(item,para)
-  resize(item);
 }
 
 function initalizedocStyle(item,size,space,para) {
@@ -14,7 +13,7 @@ function initalizedocStyle(item,size,space,para) {
   changeSize(fram,size);
   changeSpacing(fram,space);
   changeParaSpacing(fram,para)
-  resize(fram);
+
 }
 
 function preplink(item) {
@@ -24,7 +23,6 @@ function preplink(item) {
   for (var i = 0; i < h1Elements.length; i++) {
     h1Elements[i].className = "";
   }
-  resize(item);
 }
 
 function resize(item)
@@ -61,7 +59,6 @@ function changeSize(item, size) {
 
     }
   }
-  resize(item);
 
 }
 
@@ -77,7 +74,6 @@ function changeParaSpacing(item,space) {
 
     }
   }
-  resize(item);
 }
 
 function changeSpacing(item,space) {
@@ -92,7 +88,6 @@ function changeSpacing(item,space) {
 
     }
   }
-  resize(item);
 }
 
 
