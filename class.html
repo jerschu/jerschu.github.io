@@ -80,7 +80,7 @@
           d.innerHTML = xhr.responseText;
           var stylearray = d.children[1].innerText.split("}")
           var newStyle = ""
-          for (var i = 0; i < stylearray.length; i++) {
+          for (var i = 0; i < stylearray.length-1; i++) {
             newStyle += "#noteDiv" + num + " " + stylearray[i] + "}\n"
           }
           for (var i = 0; i < addedstyles.length; i++) {
