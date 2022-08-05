@@ -51,16 +51,15 @@
       "img{max-width:70% !important;height:auto !important; }",
       ".doc-content{width:85% !important;max-width:80% !important;padding: 50px !important;margin: 0 auto !important;Margin-top:20px!important}"];
 
-			function printDivContent() {
- 	var divElementContents = document.getElementById("notes").innerHTML;
- 	var windows = window.open('', '', 'height=400, width=400');
- 	windows.document.write('<html>');
- 	windows.document.write('<body > <h1>Div\'s Content Are Printed Below<br>');
- 	windows.document.write(divElementContents);
- 	windows.document.write('</body></html>');
- 	windows.document.close();
- 	windows.print();
-}
+
+        function printCertificate() {
+            const printContents = document.getElementById('notes').innerHTML;
+            const originalContents = document.body.innerHTML;
+            document.body.innerHTML = printContents;
+            window.print();
+            document.body.innerHTML = originalContents;
+        }
+
 
     function init(par, num, col) {
       var url = documents[3][1][num][0];
