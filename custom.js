@@ -51,7 +51,7 @@ function changeSize(item, size) {
     for (var i = 0; i < h1Elements.length; i++) {
       if (h1Elements[i].classList.contains("title")){
 	     h1Elements[i].style.fontSize = ((Math.sqrt(10) - Math.sqrt(1)) * (val)) + "px";
-      else{
+      }else{
 	     h1Elements[i].style.fontSize = ((Math.sqrt(10) - Math.sqrt(j - counter + 2)) * (val)) + "px";  
      
 
