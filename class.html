@@ -83,8 +83,8 @@
           }, 500);
       }
     
-    function init(num, col, size, space, para) {
-      var url = col;
+    function init(doc, num, col, size, space, para) {
+      var url = doc;
       if (url.startsWith("https://docs.google.com/document/d/")) {
         // create div and replace iframe
         var d = document.createElement('div');
@@ -142,7 +142,7 @@
       var para = document.getElementById("para-space").value;
       for (var i = 0; i < coursedocs.length; i++) {
         var col = "'" + coursedocs[i][1] + "'";
-        init(i, col, size, space, para);
+        init(coursedocs[i][0], i, col, size, space, para);
       }
     }
 
