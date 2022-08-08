@@ -102,15 +102,15 @@
           var newStyle = ""
           for (var i = 0; i < stylearray.length-1; i++) {
             newStyle += "#noteDiv" + num + " " + stylearray[i] + "}\n"
-            finalstyles.append("#noteDiv" + num + " " + stylearray[i] + "}\n");
+            finalstyles.push("#noteDiv" + num + " " + stylearray[i] + "}\n");
           }
           for (var i = 0; i < addedstyles.length; i++) {
             newStyle += "#noteDiv" + num + " " + addedstyles[i] + "\n"
-            finalstyles.append("#noteDiv" + num + " " + addedstyles[i] + "\n");
+            finalstyles.push("#noteDiv" + num + " " + addedstyles[i] + "\n");
           }
 
           newStyle += "#noteDiv" + num + " mjx-math{color:" + col + "}\n"
-          finalstyles.append("#noteDiv" + num + " mjx-math{color:" + col + "}\n");
+          finalstyles.push("#noteDiv" + num + " mjx-math{color:" + col + "}\n");
           d.children[1].innerText = newStyle;
           
           var spans = document.getElementsByTagName("span");
