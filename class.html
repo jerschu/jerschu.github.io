@@ -83,7 +83,7 @@
           }, 500);
       }
     
-    function init(par, num, col) {
+    function init(par, num, col, size, space, para) {
       var url = documents[3][1][num][0];
       if (url.startsWith("https://docs.google.com/document/d/")) {
         // create div and replace iframe
@@ -120,6 +120,7 @@
           }
           preplink(d)
           MathJax.typesetPromise();
+          initalizeStyle(d,size,space,para);
         };
         xhr.send();
 
@@ -140,7 +141,7 @@
       var para = document.getElementById("para-space").value;
       for (var i = 0; i < coursedocs.length; i++) {
         var col = "'" + coursedocs[i][1] + "'";
-        init(contentnotes, i, col);
+        init(contentnotes, i, col, size, space, para);
       }
     }
 
