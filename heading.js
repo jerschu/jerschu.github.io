@@ -26,7 +26,7 @@ function loadHeader() {
 		  <div id="navbar">\n\
 		  <a href="index">Home</a>\n\
 	          <a href="directory">Directory</a>'
-	  for(var j-0;j<names.length;j++){
+	  for(var j=0;j<names.length;j++){
 		nav+='<div class="dropdown">\n\
 			<button class="dropbtn">\n\
 			'+names[j][0]+' \n\
