@@ -22,7 +22,9 @@ function loadHeader() {
 		];
 	
 		var nav="";
-		nav+='<div class="topnav" id="myTopnav">\n\
+		nav+='<div class="header">\n\
+		  Boiler Schubox\n\
+		  </div><div class="topnav" id="myTopnav">\n\
 		<a href="#home">Home</a>\n\
 		<a href="#news">Directory</a>'
 		
