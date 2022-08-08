@@ -53,7 +53,7 @@ function changeSize(item, size) {
 	     h1Elements[i].style.fontSize = ((Math.sqrt(10) - Math.sqrt(1)) * (val)) + "px";
       }else{
 	     h1Elements[i].style.fontSize = ((Math.sqrt(10) - Math.sqrt(j - counter + 2)) * (val)) + "px";  
-     
+      }
 
     h1Elements[i].style.paddingTop="0";
     h1Elements[i].style.paddingBottom="0";
