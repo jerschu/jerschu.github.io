@@ -49,10 +49,14 @@ function changeSize(item, size) {
 	counter++;
     }
     for (var i = 0; i < h1Elements.length; i++) {
-      h1Elements[i].style.fontSize = ((Math.sqrt(10) - Math.sqrt(j - counter + 2)) * (val)) + "px";
+      if (h1Elements[i].classList.contains("title")){
+	     h1Elements[i].style.fontSize = ((Math.sqrt(10) - Math.sqrt(1)) * (val)) + "px";
+      else{
+	     h1Elements[i].style.fontSize = ((Math.sqrt(10) - Math.sqrt(j - counter + 2)) * (val)) + "px";  
+     
 
-		h1Elements[i].style.paddingTop="0";
-    h1Elements[i].style.paddingBottom="5px";
+    h1Elements[i].style.paddingTop="0";
+    h1Elements[i].style.paddingBottom="0";
 
 
     }
