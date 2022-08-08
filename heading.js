@@ -33,7 +33,7 @@ function loadHeader() {
 			<i class="fa fa-caret-down"></i>\n\
 			</button>\n\
 			<div class="dropdown-content">'
-		for (var i=0;i<names[j][1][i].length;i++){
+		for (var i=0;i<names[j][1].length;i++){
 
 			nav+='<a href=class?'+names[j][1][i]+'>'+(names[j][1][i].split("_")).join(' ')+'</a></br>';
 		}
