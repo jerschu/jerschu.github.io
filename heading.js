@@ -13,7 +13,7 @@ function resize() {
 }
 
 function loadHeader() {
-	var contentText="test"; /*change to add alert*/
+	var contentText=""; /*change to add alert*/
 	let names =[
 		 ["COMPUTER SCIENCE ",["CS_159"]],
 		 ["MATH ",["MA_261","MA_265","MA_266"]],
@@ -22,7 +22,7 @@ function loadHeader() {
 		];
 	
 		var nav="";
-		nav+='<div class="header"><img src="title.png" style="padding:10px;max-width:100%;max-height:85px">\
+		nav+='<div class="header"><img src="title.png" style="padding:10px;max-width:90%;max-height:85px">\
 		  </div><div class="topnav" id="myTopnav">\n\
 		<a href="" style="padding:5px"><img src="mainlogo.png" style="height:33px"></a>\n\
 		<a href="directory">Directory</a>'
