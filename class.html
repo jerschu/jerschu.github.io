@@ -121,8 +121,8 @@
             spans[i].removeAttribute('style');
 
           }
-          element = document.getElementsByClassName("doc-content")[0].classList[0].cssRules[0].style;
-          element.removeProperty('max-width');
+          element = document.getElementsByClassName("doc-content")[0].classList[0];
+          element..cssRules[0].style.removeProperty('max-width');
           
           preplink(d);
           MathJax.typesetPromise();
