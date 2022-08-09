@@ -57,9 +57,8 @@
       ":not(h2)+h2,h2:first-child{margin: 3px 0px; border-top: 3px solid white !important;}",
       "h2+:not(h2), h2:last-child{margin: 3px 0px; border-bottom: 3px solid white !important;}",
       "img{max-width:70% !important;height:auto !important; }",
-      ".doc-content{width:85% !important;max-width:80% !important;padding: 50px !important;margin: 0 auto !important;Margin-top:20px!important}"];
+      ".doc-content{width: -webkit-calc(100% - 50px) !important ;width:-moz-calc(100% - 50px) !important;width:calc(100% - 50px) !important;max-width: -webkit-calc(100% - 50px) !important; max-width: -moz-calc(100% - 50px) !important;max-width: calc(100% - 50px) !important;padding: 25px !important;margin: 0 auto !important;Margin-top:20px!important}"];
  
-    
       function printDivContent() {
           var contents = $("#notes").html();
           var frame1 = $('<iframe />');
