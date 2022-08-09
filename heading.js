@@ -24,7 +24,7 @@ function loadHeader() {
 		var nav="";
 		nav+='<div class="header"><img src="title.png" style="padding:10px;max-width:90%;max-height:85px">\
 		  </div><div class="topnav" id="myTopnav">\n\
-		<a href="" style="padding:5px"><img src="mainlogo.png" style="height:33px"></a>\n\
+		<a href="index" style="padding:5px"><img src="mainlogo.png" style="height:33px"></a>\n\
 		<a href="directory">Directory</a>'
 		
 		for(var j=0;j<names.length;j++){
