@@ -76,13 +76,8 @@ body {
 }
 
 .content{
-	padding-top: 25px;
-    padding-bottom: 25px;
-    padding-left: 25px;
-    padding-right: 25px;
     background-color:white;
-	overflow: hidden;
-	margin: 25px,25px,25px,25px;
+    overflow: hidden;
 
 }
 
