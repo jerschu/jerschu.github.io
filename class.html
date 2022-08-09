@@ -53,11 +53,12 @@
         ["https://docs.google.com/document/d/e/2PACX-1vRp5uFYI4QVqR0HesGYkXfeKgdJIw4hqkUmxwCN5PnQfIWZqi7TqguDBei2ptkB2JDfYkbCxAo9ZO2N/pub?embedded=true", "white"]
       ]]
     ];
+    var calculate="100%-150px"
     var addedstyles = ["h2{border-top: 0px solid white !important;border-bottom: 0px solid white !important;font-weight: normal !important;}",
       ":not(h2)+h2,h2:first-child{margin: 3px 0px; border-top: 3px solid white !important;}",
       "h2+:not(h2), h2:last-child{margin: 3px 0px; border-bottom: 3px solid white !important;}",
       "img{max-width:70% !important;height:auto !important; }",
-      ".doc-content{width: -webkit-calc(100% - 50px) !important ;width:-moz-calc(100% - 50px) !important;width:calc(100% - 50px) !important;max-width: -webkit-calc(100% - 50px) !important; max-width: -moz-calc(100% - 50px) !important;max-width: calc(100% - 50px) !important;padding: 25px !important;margin: 0 auto !important;Margin-top:20px!important}"];
+      ".doc-content{width: -webkit-calc("+calculate+") !important ;width:-moz-calc("+calculate+") !important;width:calc("+calculate+") !important;max-width: -webkit-calc("+calculate+") !important; max-width: -moz-calc("+calculate+") !important;max-width: calc("+calculate+") !important;padding: 50px !important;margin: 25px !important}"];
  
       function printDivContent() {
           var contents = $("#notes").html();
