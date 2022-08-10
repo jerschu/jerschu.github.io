@@ -53,13 +53,7 @@
         ["https://docs.google.com/document/d/e/2PACX-1vRp5uFYI4QVqR0HesGYkXfeKgdJIw4hqkUmxwCN5PnQfIWZqi7TqguDBei2ptkB2JDfYkbCxAo9ZO2N/pub?embedded=true", "white","black"]
       ]]
     ];
-    var calculate="100%-150px"
-    var addedstyles = ["h2{border-top: 0px solid white !important;border-bottom: 0px solid white !important;font-weight: normal !important;}",
-      ":not(h2)+h2,h2:first-child{margin: 3px 0px; border-top: 3px solid white !important;}",
-      "h2+:not(h2), h2:last-child{margin: 3px 0px; border-bottom: 3px solid white !important;}",
-      "img{max-width:70% !important;height:auto !important; }",
-      ".doc-content{width: -webkit-calc("+calculate+") !important ;width:-moz-calc("+calculate+") !important;width:calc("+calculate+") !important;max-width: -webkit-calc("+calculate+") !important; max-width: -moz-calc("+calculate+") !important;max-width: calc("+calculate+") !important;padding: 50px !important;margin: 25px !important}"];
- 
+    
       function printDivContent() {
           var contents = $("#notes").html();
           var frame1 = $('<iframe />');
@@ -88,6 +82,14 @@
     
     function init(par, doc, num, col, bgcol, size, space, para) {
       var url = doc;
+      var calculate="100%-150px";
+      var addedstyles = ["h2{border-top: 0px solid white !important;border-bottom: 0px solid white !important;font-weight: normal !important;}",
+      ":not(h2)+h2,h2:first-child{margin: 3px 0px; border-top: 3px solid white !important;}",
+      "h2+:not(h2), h2:last-child{margin: 3px 0px; border-bottom: 3px solid white !important;}",
+      "img{max-width:70% !important;height:auto !important; }",
+      ".doc-content{width: -webkit-calc("+calculate+") !important ;width:-moz-calc("+calculate+") !important;width:calc("+calculate+") !important;max-width: -webkit-calc("+calculate+") !important; max-width: -moz-calc("+calculate+") !important;max-width: calc("+calculate+") !important;padding: 50px !important;margin: 25px !important;}"];
+ 
+      
       if (url.startsWith("https://docs.google.com/document/d/")) {
         // create div and replace iframe
         var d = document.createElement('div');
@@ -113,9 +115,10 @@
           }
 
           newStyle += "#noteDiv" + num + " mjx-math{color:" + col + "}\n"
-          
-          finalstyles.push("#noteDiv0 .doc-content{background-color:black}");
           finalstyles.push("#noteDiv" + num + " mjx-math{color:" + col + "}\n");
+          
+          newStyle += "#noteDiv" + num + " doc-content{background-color:" + bgcol + "}\n"
+          finalstyles.push("#noteDiv" + num + " doc-content{background-color:" + bgcol + "}\n");
           d.children[1].innerText = newStyle;
           
           var spans = document.getElementsByTagName("span");
