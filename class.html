@@ -154,7 +154,7 @@
       var para = document.getElementById("para-space").value;
       for (var i = 0; i < coursedocs.length; i++) {
         var col = "'" + coursedocs[i][1] + "'";
-        var bgcol = "'" + coursedocs[i][2] + "'";
+        var bgcol = coursedocs[i][2];
         init(contentnotes, coursedocs[i][0], i, col, bgcol, size, space, para);
       }
     }
