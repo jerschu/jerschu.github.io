@@ -122,8 +122,7 @@
 
           }
           name=document.getElementsByClassName("doc-content")[0].classList[0];
-          element = document.querySelector("."+name);
-          element.style.removeProperty('max-width');
+          $("."+name).css('max-width', '0');
           
           preplink(d);
           MathJax.typesetPromise();
