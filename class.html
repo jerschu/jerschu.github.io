@@ -114,7 +114,7 @@
 
           newStyle += "#noteDiv" + num + " mjx-math{color:" + col + "}\n"
           finalstyles.push("#noteDiv" + num + " mjx-math{color:" + col + "}\n");
-          finalstyles.push("#noteDiv"+num+ " doc-content: background-color:"+ bgcol + "}\n");
+          finalstyles.push("#noteDiv" + num + " doc-content{background-color:"+ bgcol + "}\n");
           d.children[1].innerText = newStyle;
           
           var spans = document.getElementsByTagName("span");
