@@ -40,17 +40,17 @@
         ["ENGRmatlab"]
       ]],
       ["ECON_251", [
-        ["https://docs.google.com/document/d/e/2PACX-1vR4gmHvazyP5XD6qz2-oodZyDwUxZP5CM_ESo0jbFGrsVtBP6RyadM7H98NHIQ7jw/pub?embedded=true", "white"],
-        ["https://docs.google.com/document/d/e/2PACX-1vTFxVIgVrCXEwkd0Jx9yG8T_lATHszpvzg7T26yHIpnEo20jruLUYHKvhF0cn01-A/pub?embedded=true", "white"]
+        ["https://docs.google.com/document/d/e/2PACX-1vR4gmHvazyP5XD6qz2-oodZyDwUxZP5CM_ESo0jbFGrsVtBP6RyadM7H98NHIQ7jw/pub?embedded=true", "white","black"],
+        ["https://docs.google.com/document/d/e/2PACX-1vTFxVIgVrCXEwkd0Jx9yG8T_lATHszpvzg7T26yHIpnEo20jruLUYHKvhF0cn01-A/pub?embedded=true", "white","black"]
       ]],
       ["ME_200", [
-        ["https://docs.google.com/document/d/e/2PACX-1vTv01xUTOkp0ocox5DRL_koS-nZl3fABj8tWCknFaEFk6qIo1aCXLpnay7-cTrdiw/pub?embedded=true", "white"]
+        ["https://docs.google.com/document/d/e/2PACX-1vTv01xUTOkp0ocox5DRL_koS-nZl3fABj8tWCknFaEFk6qIo1aCXLpnay7-cTrdiw/pub?embedded=true", "white","black"]
       ]],
       ["MA_265", [
-        ["https://docs.google.com/document/d/e/2PACX-1vR7h0I70mx0VeRSfHWPjbEe59i89prY4NqSigKKhujhmgPEm6FPgoyAXaWbwN5XCnUu8m1vahmJ-Qwb/pub?embedded=true", "white"]
+        ["https://docs.google.com/document/d/e/2PACX-1vR7h0I70mx0VeRSfHWPjbEe59i89prY4NqSigKKhujhmgPEm6FPgoyAXaWbwN5XCnUu8m1vahmJ-Qwb/pub?embedded=true", "white","black"]
       ]],
       ["MA_266",[
-        ["https://docs.google.com/document/d/e/2PACX-1vRp5uFYI4QVqR0HesGYkXfeKgdJIw4hqkUmxwCN5PnQfIWZqi7TqguDBei2ptkB2JDfYkbCxAo9ZO2N/pub?embedded=true", "white"]
+        ["https://docs.google.com/document/d/e/2PACX-1vRp5uFYI4QVqR0HesGYkXfeKgdJIw4hqkUmxwCN5PnQfIWZqi7TqguDBei2ptkB2JDfYkbCxAo9ZO2N/pub?embedded=true", "white","black"]
       ]]
     ];
     var calculate="100%-150px"
@@ -86,7 +86,7 @@
           }, 500);
       }
     
-    function init(par, doc, num, col, size, space, para) {
+    function init(par, doc, num, col, bgcol, size, space, para) {
       var url = doc;
       if (url.startsWith("https://docs.google.com/document/d/")) {
         // create div and replace iframe
@@ -114,6 +114,7 @@
 
           newStyle += "#noteDiv" + num + " mjx-math{color:" + col + "}\n"
           finalstyles.push("#noteDiv" + num + " mjx-math{color:" + col + "}\n");
+          finalstyles.push("#noteDiv"+num+ "doc-content: background-color:"+ bgcol + "}\n");
           d.children[1].innerText = newStyle;
           
           var spans = document.getElementsByTagName("span");
@@ -121,8 +122,9 @@
             spans[i].removeAttribute('style');
 
           }
-          name="#noteDiv" + num+ " ."+document.getElementsByClassName("doc-content")[0].classList[0];
-          $(name).removeAttr('max-width');
+          
+          elem=document.getElementByTagName("doc-content")[0];
+          elem.classList.remove(elem.classList[0]);
           
           preplink(d);
           MathJax.typesetPromise();
@@ -148,7 +150,8 @@
       var para = document.getElementById("para-space").value;
       for (var i = 0; i < coursedocs.length; i++) {
         var col = "'" + coursedocs[i][1] + "'";
-        init(contentnotes, coursedocs[i][0], i, col, size, space, para);
+        var bgcol = "'" + coursedocs[i][2] + "'";
+        init(contentnotes, coursedocs[i][0], i, col, bgcol, size, space, para);
       }
     }
 
