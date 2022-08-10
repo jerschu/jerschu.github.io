@@ -121,7 +121,8 @@
             spans[i].removeAttribute('style');
 
           }
-          element = document.querySelector(document.getElementsByClassName("doc-content")[0].classList[0]);
+          name=document.getElementsByClassName("doc-content")[0].classList[0];
+          element = document.querySelector("."+name);
           element.style.removeProperty('max-width');
           
           preplink(d);
