@@ -23,7 +23,8 @@ function preplink(item) {
   }
   var elem = item.querySelectorAll("*");
   for (var i = 0; i < elem.length; i++) {
-    elem[i].style.margin = "0px";
+    elem[i].style.marginBottom = "0px";
+    elem[i].style.marginTop = "0px";
   }
 }
 
