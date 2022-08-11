@@ -62,8 +62,8 @@ function changeParaSpacing(item,space) {
   for (var j = 0; j < tags.length; j++) {
     var h1Elements = item.querySelectorAll(tags[j]);
     for (var i = 0; i < h1Elements.length; i++) {
-      h1Elements[i].style.paddingBottom = space + 'px';
-
+      h1Elements[i].style.paddingBottom = space/2 + 'px';
+      h1Elements[i].style.paddingTop = space/2 + 'px';
     }
   }
 }
