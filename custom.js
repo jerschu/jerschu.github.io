@@ -21,6 +21,10 @@ function preplink(item) {
   for (var i = 0; i < spans.length; i++) {
     spans[i].className = "";
   }
+  var elem = item.querySelectorAll("*");
+  for (var i = 0; i < elem.length; i++) {
+    elem[i].style.margin = "0px";
+  }
 }
 
 function changeSize(item, size) {
