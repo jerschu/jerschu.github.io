@@ -17,9 +17,13 @@ function initalizedocStyle(item,size,space,para) {
 }
 
 function preplink(item) {
+	
   var spans = item.querySelectorAll("span");
   for (var i = 0; i < spans.length; i++) {
-    spans[i].className = "";
+	  
+    var s=spans[i]
+    s.parentNode.insearBefore(s.innerHTML,s);
+    s.parentNode.removoeChild(s);
   }
   var elem = item.querySelectorAll("*");
   for (var i = 0; i < elem.length; i++) {
