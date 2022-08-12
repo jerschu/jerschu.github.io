@@ -15,7 +15,28 @@ function initalizedocStyle(item,size,space,para) {
   changeParaSpacing(fram,para)
 
 }
-
+function mergeSpans(){
+	var matchedArr = $("span").get()  // Select all .matched as array
+var $current, next, $next
+while (matchedArr.length > 0 ) {          // While there are unprocessed ones left
+  current = matchedArr.shift()            // Take from front of array
+  while(next = current.nextSibling) {     // While that element has a next sibling
+    if (next.nodeType === 1) {            // that is an element (not a text node)
+      var $next = $(next)                 // get next as jQuery object
+      if ($next.is("span")) {     // check if it has the class
+        // Add to the HTML of the current element
+        // (don't use .append() or you'll add separate text nodes):
+        $(current).html(function(i, content) { return content + $next.remove().html() })
+        matchedArr.shift()    // remove *next* element from start of array so
+                              // that it won't be processed separately
+        continue              // continue inner loop to check for more siblings
+      } 
+    }
+    break                     // break inner loop because the next sibling didn't match
+  }
+}
+	
+	
 function preplink(item) {
 	
   var spans = item.querySelectorAll("span");
@@ -23,12 +44,7 @@ function preplink(item) {
     spans[i].className = "";
   }
 	
-  var htmlLength = 0;
-  while (htmlLength != html.length )
-  {
-     htmlLength = html.length;
-     html = html.replace(/(<span[^<>]*>)([\s\S]*?)(<\/span>)(\s*)\1([\s\S]*?)\3/gi, "$1$2$4$5$3");
-  }
+  mergeSpans();
   
   var elem = item.querySelectorAll("*");
   for (var i = 0; i < elem.length; i++) {
