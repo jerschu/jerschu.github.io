@@ -20,11 +20,16 @@ function preplink(item) {
 	
   var spans = item.querySelectorAll("span");
   for (var i = 0; i < spans.length; i++) {
-	  
-    var s=spans[i]
-    s.parentNode.insertBefore(s.innerHTML,s);
-    s.parentNode.removoeChild(s);
+    spans[i].className = "";
   }
+	
+  var htmlLength = 0;
+  while (htmlLength != html.length )
+  {
+     htmlLength = html.length;
+     html = html.replace(/(<span[^<>]*>)([\s\S]*?)(<\/span>)(\s*)\1([\s\S]*?)\3/gi, "$1$2$4$5$3");
+  }
+  
   var elem = item.querySelectorAll("*");
   for (var i = 0; i < elem.length; i++) {
     elem[i].style.marginBottom = "0px";
