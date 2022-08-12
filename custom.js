@@ -35,6 +35,7 @@ while (matchedArr.length > 0 ) {          // While there are unprocessed ones le
     break                     // break inner loop because the next sibling didn't match
   }
 }
+}
 	
 	
 function preplink(item) {
