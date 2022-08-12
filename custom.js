@@ -22,7 +22,7 @@ function preplink(item) {
   for (var i = 0; i < spans.length; i++) {
 	  
     var s=spans[i]
-    s.parentNode.insearBefore(s.innerHTML,s);
+    s.parentNode.insertBefore(s.innerHTML,s);
     s.parentNode.removoeChild(s);
   }
   var elem = item.querySelectorAll("*");
