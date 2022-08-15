@@ -164,6 +164,11 @@
 
     function loadAll() {
       loadHeader();
+      if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+        
+      }else{
+        document.getElementById("print").innerHTML='<button class="print-button" onclick="printDivContent()"><span class="print-icon"></span></button>';
+      }
       loadNotes();
     }
   </script>
@@ -180,7 +185,7 @@
   <div class='content'>
     <div id="setting">
 
-      <button class="print-button" onclick="printDivContent()"><span class="print-icon"></span></button>
+      <div id="print"></div>
       <div class="font">
         <label for="size">Font Size</label>
         <input id="size" class="slider" type="range" min="0" max="50" value="12" step="1" oninput="changeSizeForAll()">
