@@ -65,8 +65,7 @@ function changeSize(item, size) {
     var h1Elements = item.querySelectorAll(tags[j]);
     if (h1Elements.length == 0) {
       counter++;
-    }
-    if (j>5){
+    }else if (j>5){
 	counter++;
     }
     for (var i = 0; i < h1Elements.length; i++) {
